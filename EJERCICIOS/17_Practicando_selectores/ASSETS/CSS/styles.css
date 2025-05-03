@@ -1,0 +1,52 @@
+h2 {
+    color: blue;
+}
+
+section {
+    background-color: lightgray;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+a {
+    color : green;
+}
+
+
+strong {
+    color: red;
+}
+blockquote{
+    margin-top:20px 0;
+}
+
+footer{
+    background-color: black;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    border-radius: 5px;
+}
+
+figure{
+    border: solid 1px blue;
+    margin: 0;
+}
+img{
+    width: 200px;
+    height: 200px;
+}
+.figure-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+span{ 
+    background-color: yellow;
+}
+
+li {
+    border: 1px solid black;
+}

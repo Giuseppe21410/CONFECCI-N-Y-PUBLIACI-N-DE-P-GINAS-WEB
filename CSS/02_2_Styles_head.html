@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Styles_2</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <style>
+        /* Estilos en CSS encabezado. Tener en cuenta la forma de los comentarios. */
+        body {
+            background-color: aqua; /* color de fondo */
+            color: black; /* color del texto */
+            font-family: Arial, Helvetica, sans-serif; /* tipo de letra */
+        }
+        h1 {
+            background-color: blueviolet; /* color de fondo */
+            color: azure; /* color del texto */
+            font-size: 400%; /* tamaño de la fuente */
+            text-align: center; /* alineación del texto */
+        }
+        p {
+            background-color: yellow; 
+            font-size: small;
+            text-align: justify;
+        }
+        .alerta{ /* Para crear una clase ponemos el punto delante del nombre. */
+            background-color: red; /* color de fondo */
+            color: white; /* color del texto */
+            font-size: 200%; /* tamaño de la fuente */
+            text-align: center; /* alineación del texto */
+            padding: 10px; /* espacio entre el borde y el texto */
+            margin: 10px; /* espacio entre el borde y el resto de la página */
+            border-radius: 10px; /* bordes redondeados */
+            border: 2px solid black; /* borde */
+        }
+        .boton{
+            background-color: #0066cc;
+            color:#ffffff;
+            border: none;
+            cursor: pointer;
+        }
+        .boton:hover{ /* Cuando pasamos el ratón por encima del botón cambia de color. */
+            background-color: #005cbf;
+        }
+        </style>              
+    </head>
+    
+    <body>
+        <h1>Colores de fondo.</h1>
+        <p>Aprendiendo diferentes tipos de estilos.</p>
+        <div class="alerta">Este es un mensaje de alerta.</div><!---Para crear una clase añadimos "class=..." .-->
+        <button class="boton">Aceptar</button>
+
+    </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="../ASSETS/CSS/style.css">
+</head>
+<body>
+    <main>
+        <section id="Redes sociales" role="region" aria-label="Redes sociales">
+            <h2>Redes Sociales</h2>
+            <p>Síguenos en nuestras redes sociales:</p>
+            <ul>
+                <li><a href="https://www.facebook.com/" target="_blank">Facebook</a></li>
+                <li><a href="https://www.twitter.com/" target="_blank">Twitter</a></li>
+                <li><a href="https://www.instagram.com/" target="_blank">Instagram</a></li>
+            </ul>
+        </section>
+        <section id="Formulario de contacto" role="region" aria-label="Formulario de contacto">
+            <h2>Formulario de Contacto</h2>
+            <p>Si deseas ponerte en contacto con nosotros, completa el siguiente formulario:</p>
+    <form  id="formulario" action="enviar_contacto.php" method="post">
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre" role="" required><br><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+        <label for="mensaje">Mensaje:</label><br>
+        <textarea id="mensaje" name="mensaje" rows="4" required></textarea><br><br>
+        <input id="Button_1" type="submit"  role="button"  value="Enviar">
+    </form>
+        </section>
+    </main>
+    <hr>
+     <footer role="contentinfo" aria-label="Pie de página">
+        <p style="text-align: center;">&copy; 2025 Giuseppe Fuentes Moreno. Todos los derechos reservados.</p>
+        <div id="Logo_2" role="img" aria-label="Logo de la tienda">  
+            <img id="Logo_1" src="../ASSETS/IMAGES/png-transparent-media-markt-hd-logo-thumbnail.png" alt="Logo de la tienda" width="400" height="auto" aria-hidden="true">
+        </div>
+     </footer>
+</body>
+</html>

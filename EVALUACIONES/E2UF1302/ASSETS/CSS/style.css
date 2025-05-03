@@ -1,0 +1,86 @@
+p{
+    color:gray;
+    text-align:justify;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: normal;
+}
+h2{
+    color:brown;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: xx-large;
+}
+#Logo_2{
+    text-align: center;
+}
+ul{
+    text-align: justify;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+}
+#video{
+    text-align: center;
+
+}
+label{
+    color:gray;
+    text-align: justify;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: normal;
+    font-weight: bold;
+    text-decoration: underline;
+}
+#Button_1{
+    background-color: brown ; 
+    border: none;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 100px;
+}
+#formulario{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+
+}
+input{
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid gray;
+    padding-top:5px;
+}
+textarea{
+    width: 400px;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid gray;
+
+}
+button{ 
+    background-color: brown ; 
+    border: none;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 200px;
+    height: 60px;
+}
+#imagen_productos{
+    text-align: center;
+    border-radius: 15px;
+    border: 2px solid brown;
+}
+#Botones{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;;
+    margin: 30px;   
+}   
+hr{
+    border: 1px solid brown;
+    width: 100%;
+    margin: 20px 0;
+}

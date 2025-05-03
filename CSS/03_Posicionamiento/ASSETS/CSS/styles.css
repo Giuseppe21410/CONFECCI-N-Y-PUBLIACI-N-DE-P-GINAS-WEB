@@ -1,0 +1,139 @@
+/* --- CONTENEDOR PRINCIPAL --- */
+/* Define un contenedor con márgenes y un ancho fijo */
+.container {
+    margin: 20px; /* Espaciado externo alrededor del contenedor */
+    margin-top: 60px; /* Espaciado superior adicional */
+    width: 350px; /* Ancho fijo del contenedor */
+}
+
+/* --- ENCABEZADO --- */
+/* Estilo para el encabezado h1 */
+h1 {
+    text-align: center; /* Centra el texto horizontalmente */
+    color: purple; /* Cambia el color del texto a morado */
+}
+
+/* --- CONTENEDOR RELATIVO --- */
+/* Define un contenedor con posición relativa */
+.example {
+    position: relative; /* Establece el contenedor como referencia para elementos absolutos */
+    border: 2px solid #ccc; /* Borde gris claro */
+    padding: 20px; /* Espaciado interno dentro del contenedor */
+}
+
+/* --- ELEMENTOS GENERALES --- */
+/* Define un margen inferior para los elementos */
+.item {
+    margin-bottom: 20px; /* Espaciado externo debajo de cada elemento */
+}
+
+/* --- POSICIÓN RELATIVA --- */
+/* Estilo para un elemento con posición relativa */
+.item-relative {
+    position: relative; /* Posiciona el elemento en relación con su posición original */
+    top: -20px; /* Mueve el elemento 20px hacia arriba */
+    left: 20px; /* Mueve el elemento 20px hacia la derecha */
+}
+
+/* --- POSICIÓN ABSOLUTA --- */
+/* Define un contenedor relativo para elementos absolutos */
+.absolute {
+    position: relative; /* Establece este contenedor como referencia para elementos absolutos */
+}
+
+/* Estilo para un elemento con posición absoluta */
+.item-absolute {
+    position: absolute; /* Posiciona el elemento en relación con el contenedor relativo más cercano */
+    top: 90px; /* Mueve el elemento 90px hacia abajo desde el borde superior del contenedor */
+    left: 40px; /* Mueve el elemento 40px hacia la derecha desde el borde izquierdo del contenedor */
+}
+
+/* --- POSICIÓN FIJA --- */
+/* Estilo para un elemento con posición fija */
+.item-fixed {
+    position: fixed; /* Posiciona el elemento en relación con la ventana del navegador */
+    top: 0px; /* Fija el elemento al borde superior de la ventana */
+    left: 20px; /* Fija el elemento 20px desde el borde izquierdo de la ventana */
+    /* Este elemento no se moverá al hacer scroll */
+}
+
+/* --- POSICIÓN FLOTANTE --- */
+/* Estilo para un elemento con posición flotante */
+.float-left{
+    width: 100px; /* Ancho del elemento flotante */
+    height: 100px; /* Alto del elemento flotante */
+    float:left; /* Flota el elemento a la izquierda */;
+}
+
+.float-right{
+    width: 100px; /* Ancho del elemento flotante */
+    height: 100px; /* Alto del elemento flotante */
+    float:right; /* Flota el elemento a la derecha */;
+}
+
+/* --- FLEX --- */
+/* Estilo para un contenedor flex */
+.flex-container {
+    display: flex; /* Activa el modelo de caja flexible */
+    justify-content: center; /* Distribuye el espacio entre los elementos */
+    align-items:center; /* Alinea los elementos verticalmente al centro */
+    height: 110px; /* Altura del contenedor flex */
+    border: 1px solid #ccc; /* Borde gris claro */
+    /* flex-direction: column; */ /* Cambia la dirección de los elementos a columna (opcional) */
+    /* flex-wrap: wrap; */ /* Permite que los elementos se envuelvan en varias líneas, cuando el contenedor cambia de tamaño. (opcional) */
+    /* gap: 10px; */ /* Espacio entre los elementos (opcional) */
+    /* align-content: center; */ /* Alinea el contenido del contenedor (opcional) */
+    /* align-self: center; */ /* Alinea el elemento dentro del contenedor (opcional) */
+    /* flex-grow: 1; */ /* Permite que el elemento crezca para llenar el espacio disponible (opcional) */
+    /* flex-shrink: 1; */ /* Permite que el elemento se reduzca si es necesario (opcional) */
+    /* flex-direction: row; */ /* Cambia la dirección de los elementos a fila (opcional) */
+    /* flex-basis: 100px; */ /* Establece el tamaño base del elemento (opcional) */
+    /* flex: 1; */ /* Permite que el elemento crezca y se reduzca (opcional) */
+    /* display: inline-flex; */ /* Cambia el contenedor a un contenedor flex en línea (opcional) */
+    
+}
+/* Estilo para los elementos dentro del contenedor flex */  
+.flex-item-1{
+    width: 100px; /* Ancho del primer elemento */
+    height: 100px; /* Alto del primer elemento */
+    border-radius: 10px; /* Bordes redondeados */
+}
+.flex-item-2{
+    width: 100px; /* Ancho del segundo elemento */
+    height: 100px; /* Alto del segundo elemento */
+    border-radius: 10px; /* Bordes redondeados */
+    margin: 10px; /* Espaciado externo alrededor del segundo elemento */
+}
+
+/* GRID */
+/* Estilo para un contenedor grid */
+
+.container {  display: grid;
+    grid-template-columns: 0.3fr 1.7fr 1fr; /* Define las columnas del grid */
+    grid-template-rows: 0.2fr 1.6fr 1.2fr; /* Define las filas del grid */
+    gap: 0px 0px; 
+    grid-auto-flow: row;
+    grid-template-areas: /* Define las áreas del grid */
+      "Header Header Header"
+      "Rosa Aside Aside"
+      "Rosa Casa Casa";
+  }
+  
+  .Header { grid-area: Header; 
+    background-color: yellow;
+}
+  
+  .Aside { grid-area: Aside; 
+    background-color: lightgray;
+}
+  
+  .Casa { grid-area: Casa; 
+    background-color: aqua;
+ }
+  
+  .Rosa { grid-area: Rosa; 
+    background-color: red;
+
+}
+  
+  

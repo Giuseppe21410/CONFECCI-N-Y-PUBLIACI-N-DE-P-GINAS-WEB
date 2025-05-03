@@ -1,0 +1,330 @@
+/* --- PROPIEDADES DE TEXTO --- */
+/* Controlan el estilo y formato del texto */
+h1 {
+    color: blue; /* Cambia el color del texto */
+    font-size: 24px; /* Tamaño de la fuente */
+    font-family: Arial, sans-serif; /* Familia tipográfica */
+    font-weight: bold; /* Grosor del texto (normal, bold, etc.) */
+    text-align: center; /* Alinea el texto (left, center, right, justify) */
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+    letter-spacing: 2px; /* Espaciado entre letras */
+    line-height: 1.5; /* Altura de línea */
+    text-decoration: underline; /* Subraya el texto (none, underline, overline, line-through) */
+}
+
+/* --- PROPIEDADES DE FONDO --- */
+/* Controlan el fondo de los elementos */
+body {
+    background-color: #f0f0f0; /* Color de fondo */
+    background-image: url('imagen.jpg'); /* Imagen de fondo */
+    background-repeat: no-repeat; /* Repetición de la imagen (repeat, no-repeat, repeat-x, repeat-y) */
+    background-size: cover; /* Tamaño del fondo (cover, contain, auto) */
+    background-position: center; /* Posición del fondo (top, center, bottom, left, right) */
+}
+
+/* --- PROPIEDADES DE BORDE --- */
+/* Controlan el estilo de los bordes */
+div {
+    border: 2px solid black; /* Grosor, estilo y color del borde */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5); /* Sombra alrededor del elemento */
+}
+
+/* --- PROPIEDADES DE ESPACIADO --- */
+/* Controlan el espacio interno y externo de los elementos */
+p {
+    margin: 20px; /* Espacio externo (fuera del elemento) */
+    padding: 10px; /* Espacio interno (dentro del elemento) */
+}
+
+/* --- PROPIEDADES DE POSICIONAMIENTO --- */
+/* Controlan la posición de los elementos */
+img {
+    position: absolute; /* Posición absoluta */
+    top: 50px; /* Distancia desde el borde superior */
+    left: 100px; /* Distancia desde el borde izquierdo */
+    z-index: 10; /* Controla la superposición (mayor valor, más arriba) */
+}
+
+/* position: relative */
+/* El elemento se posiciona en relación con su posición original en el flujo del documento. */
+/* Esto significa que puedes moverlo usando las propiedades top, left, right o bottom, */
+/* pero su espacio original en el flujo del documento permanece reservado. */
+.relative-example {
+    position: relative; /* Activa el posicionamiento relativo */
+    top: 20px; /* Mueve el elemento 20px hacia abajo desde su posición original */
+    left: 10px; /* Mueve el elemento 10px hacia la derecha desde su posición original */
+    z-index: 5; /* Controla la superposición en relación con otros elementos */
+}
+
+/* position: relative es útil para crear un contenedor de referencia para elementos con position: absolute. */
+/* Los elementos hijos con position: absolute se posicionarán en relación con este contenedor. */
+
+/* --- PROPIEDADES DE DISPLAY Y DISEÑO --- */
+/* Controlan cómo se muestran los elementos */
+.container {
+    display: flex; /* Activa el diseño flexible */
+    justify-content: space-between; /* Espaciado uniforme entre los elementos */
+    align-items: center; /* Alineación vertical de los elementos */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en varias líneas si no caben */
+}
+
+/* Ejemplo de flexbox con más propiedades */
+.flex-example {
+    display: flex; /* Activa el diseño flexible */
+    flex-direction: column; /* Organiza los elementos en una columna */
+    justify-content: center; /* Centra los elementos verticalmente */
+    align-items: flex-start; /* Alinea los elementos al inicio horizontalmente */
+    gap: 15px; /* Espaciado entre los elementos */
+}
+
+/* Grid: Diseño de cuadrícula */
+.grid {
+    display: grid; /* Activa el diseño de cuadrícula */
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas iguales */
+    grid-template-rows: auto 100px; /* Dos filas: la primera automática, la segunda de 100px */
+    gap: 10px; /* Espaciado entre los elementos */
+}
+
+/* Ejemplo de grid con más propiedades */
+.grid-example {
+    display: grid; /* Activa el diseño de cuadrícula */
+    grid-template-areas: 
+        "header header header"
+        "sidebar main main"
+        "footer footer footer"; /* Define áreas de diseño */
+    grid-template-columns: 1fr 2fr; /* Dos columnas: la primera ocupa 1 parte, la segunda 2 partes */
+    grid-template-rows: 50px auto 30px; /* Tres filas: altura fija para header y footer, auto para el contenido */
+}
+
+.grid-item-header {
+    grid-area: header; /* Asigna este elemento al área "header" */
+}
+
+.grid-item-sidebar {
+    grid-area: sidebar; /* Asigna este elemento al área "sidebar" */
+}
+
+.grid-item-main {
+    grid-area: main; /* Asigna este elemento al área "main" */
+}
+
+.grid-item-footer {
+    grid-area: footer; /* Asigna este elemento al área "footer" */
+}
+
+/* display: inline-block */
+/* Combina características de block e inline: no comienza en una nueva línea, */
+/* pero permite definir ancho y alto. */
+.inline-block-example {
+    display: inline-block; /* Activa el diseño inline-block */
+    width: 150px; /* Define el ancho del elemento */
+    height: 50px; /* Define el alto del elemento */
+    margin: 10px; /* Espaciado externo */
+    background-color: #3498db; /* Fondo azul */
+    text-align: center; /* Centra el texto horizontalmente */
+    line-height: 50px; /* Centra el texto verticalmente */
+}
+
+/* display: none */
+/* Oculta el elemento completamente, como si no existiera en el documento. */
+.hidden-example {
+    display: none; /* El elemento no se muestra */
+}
+
+/* display: inline-flex */
+/* Similar a flex, pero el contenedor se comporta como un elemento inline. */
+.inline-flex-example {
+    display: inline-flex; /* Activa el diseño flexible en línea */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+    gap: 10px; /* Espaciado entre los elementos */
+}
+
+/* --- PROPIEDADES DE TRANSICIÓN Y ANIMACIÓN --- */
+/* Controlan efectos visuales */
+
+/* Transiciones */
+/* Las transiciones permiten animar cambios en las propiedades CSS de forma suave */
+button {
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transición suave para el color de fondo y la transformación */
+}
+
+button:hover {
+    background-color: #3498db; /* Cambia el color al pasar el mouse */
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño del botón */
+}
+
+/* Ejemplo de transición con opacidad */
+.fade-example {
+    opacity: 0.5; /* Opacidad inicial */
+    transition: opacity 0.5s ease-in-out; /* Transición suave para la opacidad */
+}
+
+.fade-example:hover {
+    opacity: 1; /* Cambia la opacidad al pasar el mouse */
+}
+
+/* Animaciones */
+/* Las animaciones permiten crear efectos más complejos y personalizados */
+
+/* Definición de una animación con @keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Comienza invisible */
+        transform: translateY(-20px); /* Comienza desplazado hacia arriba */
+    }
+    to {
+        opacity: 1; /* Termina completamente visible */
+        transform: translateY(0); /* Termina en su posición original */
+    }
+}
+
+.animated {
+    animation: fadeIn 2s ease-in-out; /* Aplica la animación */
+}
+
+/* Ejemplo de animación infinita */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0); /* Posición inicial y final */
+    }
+    50% {
+        transform: translateY(-20px); /* Salta hacia arriba */
+    }
+}
+
+.bouncing {
+    animation: bounce 1s infinite; /* Aplica la animación de rebote de forma infinita */
+}
+
+/* Ejemplo de animación con múltiples pasos */
+@keyframes colorChange {
+    0% {
+        background-color: red;
+    }
+    50% {
+        background-color: yellow;
+    }
+    100% {
+        background-color: green;
+    }
+}
+
+.colorful {
+    animation: colorChange 3s linear infinite; /* Cambia de color continuamente */
+}
+
+/* Propiedades relacionadas con animaciones */
+/* animation-name: Nombre de la animación definida con @keyframes */
+/* animation-duration: Duración de la animación (por ejemplo, 2s, 500ms) */
+/* animation-timing-function: Controla la velocidad de la animación (ease, linear, ease-in, ease-out, ease-in-out) */
+/* animation-delay: Retraso antes de que comience la animación */
+/* animation-iteration-count: Número de veces que se repite la animación (puede ser un número o "infinite") */
+/* animation-direction: Dirección de la animación (normal, reverse, alternate, alternate-reverse) */
+
+/* Ejemplo con todas las propiedades de animación */
+.full-animation {
+    animation-name: fadeIn; /* Nombre de la animación */
+    animation-duration: 2s; /* Duración de 2 segundos */
+    animation-timing-function: ease-in-out; /* Velocidad suave */
+    animation-delay: 1s; /* Retraso de 1 segundo */
+    animation-iteration-count: infinite; /* Se repite infinitamente */
+    animation-direction: alternate; /* Alterna entre la animación normal y reversa */
+}
+
+/* --- PROPIEDADES DE TAMAÑO Y DIMENSIONES --- */
+/* Controlan el tamaño de los elementos */
+.box {
+    width: 200px; /* Ancho del elemento */
+    height: 100px; /* Alto del elemento */
+    max-width: 100%; /* Ancho máximo */
+    min-height: 50px; /* Alto mínimo */
+}
+
+/* --- PROPIEDADES DE CURSOR --- */
+/* Controlan el estilo del cursor */
+a {
+    cursor: pointer; /* Cambia el cursor a una mano al pasar sobre el enlace */
+}
+
+/* --- VARIABLES CSS --- */
+/* Permiten definir valores reutilizables */
+:root {
+    --main-color: #3498db; /* Color principal */
+    --secondary-color: #2ecc71; /* Color secundario */
+    --border-top-color: ;
+}
+
+.header {
+    background-color: var(--main-color); /* Usa la variable definida */
+    color: var(--secondary-color); /* Usa otra variable */
+}
+
+/* --- SELECTORES BÁSICOS EN CSS --- */
+
+/* 1. Selector Universal (*) */
+/* Aplica estilos a todos los elementos del documento */
+* {
+    margin: 0; /* Elimina los márgenes predeterminados */
+    padding: 0; /* Elimina los rellenos predeterminados */
+}
+
+/* 2. Selector de Tipo */
+/* Aplica estilos a todos los elementos de un tipo específico (por ejemplo, <p>, <h1>, <div>) */
+p {
+    font-size: 16px; /* Cambia el tamaño de la fuente de todos los párrafos */
+    color: #333; /* Cambia el color del texto de los párrafos */
+}
+
+/* 3. Selector de Clase (.nombre-clase) */
+/* Aplica estilos a todos los elementos que tengan una clase específica */
+.example-class {
+    background-color: #f0f0f0; /* Cambia el color de fondo */
+    padding: 10px; /* Añade espacio interno */
+}
+
+/* 4. Selector de ID (#nombre-id) */
+/* Aplica estilos a un elemento único con un ID específico */
+#example-id {
+    border: 2px solid black; /* Añade un borde negro */
+    text-align: center; /* Centra el texto */
+}
+
+/* 5. Selector de Grupo (elemento1, elemento2) */
+/* Aplica los mismos estilos a varios elementos */
+h1, h2, h3 {
+    font-family: Arial, sans-serif; /* Cambia la fuente de los encabezados */
+    color: blue; /* Cambia el color del texto */
+}
+
+/* 6. Selector Descendiente (elemento1 elemento2) */
+/* Aplica estilos a los elementos que están dentro de un contenedor específico */
+div p {
+    color: green; /* Cambia el color del texto de los párrafos dentro de un <div> */
+}
+
+/* 7. Selector de Hijo Directo (elemento1 > elemento2) */
+/* Aplica estilos a los elementos hijos directos de un contenedor */
+ul > li {
+    list-style-type: square; /* Cambia el estilo de los puntos de las listas */
+}
+
+/* 8. Selector de Atributo ([atributo]) */
+/* Aplica estilos a los elementos que tienen un atributo específico */
+input[type="text"] {
+    border: 1px solid gray; /* Añade un borde gris a los campos de texto */
+    padding: 5px; /* Añade espacio interno */
+}
+
+/* 9. Selector de Pseudo-clase (:pseudo-clase) */
+/* Aplica estilos a un estado específico de un elemento */
+a:hover {
+    color: red; /* Cambia el color del enlace al pasar el mouse */
+}
+
+/* 10. Selector de Pseudo-elemento (::pseudo-elemento) */
+/* Aplica estilos a una parte específica de un elemento */
+p::first-line {
+    font-weight: bold; /* Hace que la primera línea del párrafo sea negrita */
+}

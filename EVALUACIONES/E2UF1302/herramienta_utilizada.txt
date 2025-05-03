@@ -1,0 +1,8 @@
+Visual Studio Code (VS Code) es un editor de código fuente desarrollado por Microsoft. Es ligero, rápido y altamente personalizable, diseñado para soportar múltiples lenguajes de programación y flujos de trabajo. Algunas de sus características principales incluyen:
+
+- Extensiones: Permite instalar extensiones para añadir soporte a lenguajes, herramientas y frameworks.
+- Depuración: Incluye herramientas integradas para depurar código.
+- Control de versiones: Integración con Git para gestionar repositorios directamente desde el editor.
+- Terminal integrado: Ofrece un terminal dentro del editor para ejecutar comandos sin cambiar de ventana.
+- IntelliSense: Proporciona autocompletado inteligente y sugerencias de código.
+- Multiplataforma: Disponible para Windows, macOS y Linux.

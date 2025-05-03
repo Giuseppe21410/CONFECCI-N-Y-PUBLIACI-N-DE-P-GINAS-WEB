@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head> 
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Perfil Profesional - Giuseppe Fuentes Moreno</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+ <body>
+    <header> 
+        <h1>Giuseppe fuentes Moreno</h1>
+        <p><em>Desarrollador Web</em></p>
+        <nav aria-label="Menú principal">
+            <ul>
+                <li><a href="#sobre-mí">Sobre mí</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header> 
+    <main>
+        <section id="sobre-mí" aria-labelledby="título_sobre_mí">
+            <h2 id="título_sobre_mí">Sobre mí</h2>
+            <p>Hola, soy Giuseppe Fuentes Moreno, un apasionado desarrollador web con experiencia en HTML, CSS y JavaScript. Me encanta crear sitios web atractivos y funcionales.</p>
+            <details>
+                <summary>Más información</summary>
+                <p>Tengo un enfoque centrado en el usuario y siempre busco aprender nuevas tecnologías para mejorar mis habilidades.</p>
+            </details>
+        </section>
+        <section id="proyectos" aria-label="título_proyectos">
+            <h2 id="título_proyectos">Proyectos</h2>
+            <article>
+                <h3>Proyecto 1: Portafolio</h3>
+                <p>Un portafolio personal que muestra mis habilidades y proyectos anteriores.</p>
+                <img  style="border-color: black; border: 10px;"src="https://okdiario.com/img/2018/11/28/codigo-html-655x368.jpg" alt="Portafolio" width="300" height="200">
+            </article>
+        </section>
+        <section id="contacto" aria-label="título_contacto">
+            <h2 id="título_contacto">Contacto</h2>
+            <form action="#" method="post">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required autofocus>
+                <br>
+                <label for="correo">Correo electrónico:</label>
+                <input type="email" id="correo" name="Correo" required>
+                <br>
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="4" cols="50" placeholder="Escribeme un mensaje."></textarea>
+            </form>
+            <br>
+            <fieldset>
+                <legend>Preferencias de contacto</legend>
+                <label for="telefono">Teléfono:</label>
+                <input type="radio" id="telefono" name="telefono" value="Teléfono" >
+                <br>
+                <label for="correo">Correo electrónico:</label>
+                <input type="radio" id="correo" name="correo" value="Correo electrónico" >
+                <br>
+            </fieldset>
+            <button type="submit">Enviar</button>
+
+        </section>
+    </main>
+    <footer style=" padding: 10px; text-align: center;">
+        <p>&copy; 2025 Giuseppe Fuentes Moreno. Todos los derechos reservados.</p>
+        <p><small>Este sitio ha sido construido con HTML5.</small></p>
+    </footer>
+ </body>
+</html>

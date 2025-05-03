@@ -1,0 +1,90 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+#header_top{
+    background-color:black;
+    display: flex; /* Usamos flexbox */
+    justify-content: center; /* Centra los elementos horizontalmente */
+
+}
+
+
+#header_top button{
+    color: white;
+    margin: 0 7px;
+    font-size: 17px;
+    padding: 15px 0px;
+    border: none; 
+    background-color: black;
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
+#header_top button:hover{
+    background-color:dimgrey; /* Cambia el color al pasar el mouse */
+}
+
+#header_bottom{
+   position: relative; 
+}
+
+#header_bottom_1{
+    position: absolute; 
+    top: 25%;
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    color: white;
+    font-size: 25px;
+    text-align: center; 
+}
+
+
+
+#header_bottom img {
+    width: 100%;
+    height: auto; 
+    display: block; 
+}
+
+footer{
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px 0; 
+    position: relative; 
+}
+
+footer a{
+    color: red
+}
+
+#menu{
+    margin: 25px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f0f0f0; 
+}
+
+#menu hr{
+    border: 1px solid red;
+}
+#menu h2{
+    color: red;
+}
+
+#contacto{
+    margin: 25px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+}
+
+#contacto h2{
+    color: red;
+}
+
+#contacto hr{
+    border: 1px solid red; 
+}   
+
