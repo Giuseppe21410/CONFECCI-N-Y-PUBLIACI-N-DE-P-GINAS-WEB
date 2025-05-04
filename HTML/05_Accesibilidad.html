@@ -1,0 +1,49 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!--Los atributos ARIA, existen para ayudar a personas con discapacidades —especialmente usuarios de lectores de pantalla— a entender el contenido y la estructura de una página web.-->
+<body>
+    <header role="banner">
+        <h1>ARIA (Accessible Rich Internet Applications)</h1>
+        <p> <em>Aprendiendo sobre accesibilidad web.</em></p>
+        <nav role="navigation" aria-label="Menú principal">
+        <ul>
+          <li><a href="#Definición">Definición</a></li>
+          <li><a href="#ejemplos">Ejemplos</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+        <section id="Definición" role="region" aria-label="Definición">
+            <article role="article" aria-label="Definición de ARIA">
+                <h2>Definición</h2>
+            <p style="text-align: justify;">ARIA es un conjunto de atributos especiales que se pueden agregar a HTML para mejorar la accesibilidad de las aplicaciones web.Estos atributos ayudan a los lectores de pantalla a interpretar mejor el contenido y la estructura de la página.</p>
+            <p>Los atributos ARIA se utilizan para describir roles, propiedades y estados de los elementos de la interfaz de usuario. Por ejemplo:</p>
+            <ul>
+                <li><strong>role="button"</strong>: Indica que un elemento es un botón.</li>
+                <li><strong>aria-label</strong>: Proporciona una etiqueta accesible para un elemento.</li>
+                <li><strong>aria-hidden="true"</strong>: Indica que un elemento no es visible para los lectores de pantalla.</li>
+            </ul>
+            </article> 
+        </section>
+        <section id="ejemplos" role="region" aria-label="Ejemplos">
+            <h2>Ejemplos</h2>
+            <p>En este ejemplo, se utilizan atributos ARIA para mejorar la accesibilidad de un botón y una imagen:</p>
+            <!-- Botón con ícono accesible -->
+              <button aria-label="Buscar">
+               🔍
+              </button>
+        <!-- Elemento decorativo que se oculta del lector de pantalla -->
+        <div aria-hidden="true">
+          <img src="https://plus.unsplash.com/premium_photo-1678495222603-b66f6393c166?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxfHx8ZW58MHx8fHx8" alt="imagen_decorativa" width="300" height="auto" />
+        </div>
+        <footer role="contentinfo" aria-label="Información de contacto">
+            <p style="text-align: center;">&copy; 2025 Giuseppe Fuentes Moreno. Todos los derechos reservados.</p>
+        </footer>
+      </main>
+</body>
+</html>
