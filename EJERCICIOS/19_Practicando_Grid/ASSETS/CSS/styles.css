@@ -1,0 +1,61 @@
+* {
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho y alto total del elemento */
+
+}
+
+
+
+.wrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Define tres columnas de igual tamaño */
+    grid-auto-rows: minmax(100px, auto); /* Define filas automáticas con un mínimo de 100px */
+    grid-gap: 1px; /* Espacio entre las filas y columnas */
+
+}
+
+.wrapper > div {
+    border: 1px solid red; /* Borde gris claro */
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+.one {
+    background-color: yellow;
+    grid-column: 1 / 3; /* Ocupa desde la columna 1 hasta la columna 3 */
+    grid-row: 1; /* Ocupa la fila 1 */
+    opacity: 0.5; /* Opacidad del 50% */
+}
+
+.two {
+    background-color: lightsalmon;
+    grid-column: 2/4;
+    opacity: 0.5; /* Opacidad del 50% */
+    grid-row: 1/3; /* Ocupa la fila 1 */
+}
+
+.three{
+    background-color: lightgreen;
+    grid-column: 1;
+    grid-row: 2/5; /* Ocupa desde la fila 2 hasta la fila 5 */
+}
+
+.four{
+    background-color: lightblue;
+    grid-column: 3; /* Ocupa desde la columna 2 hasta la columna 4 */
+    grid-row: 3; /* Ocupa la fila 2 */
+
+}
+
+.five{
+    background-color: lightpink;
+    grid-column: 2; /* Ocupa desde la columna 2 hasta la columna 4 */
+    grid-row: 4; /* Ocupa la fila 2 */
+
+}
+
+.six{
+    background-color: lightgray;
+    grid-column: 3; /* Ocupa desde la columna 1 hasta la columna 4 */
+    grid-row: 4; /* Ocupa la fila 2 */
+
+}
