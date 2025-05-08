@@ -119,19 +119,25 @@ h1 {
       "Rosa Casa Casa";
   }
   
-  .Header { grid-area: Header; 
+  .Header { grid-area: 1/2/1/4;  /* Por secciones: grid-area: fila-inicio / columna-inicio / fila-fin / columna-fin;*/
     background-color: yellow;
+
 }
   
-  .Aside { grid-area: Aside; 
+  .Aside { grid-area: Aside; /* Se dispone como nombre de área*/
     background-color: lightgray;
 }
   
-  .Casa { grid-area: Casa; 
+  .Casa {  
     background-color: aqua;
+    grid-column: 2/4; /* Declarando la columna*/
+    grid-row: 3/4; /* Declarando fila*/
  }
   
-  .Rosa { grid-area: Rosa; 
+  .Rosa { grid-column-start: 1; /* Declaras el comienzo y el final individualmente*/ 
+    grid-row-start: 2;
+    grid-row-end: 4;
+
     background-color: red;
 
 }
