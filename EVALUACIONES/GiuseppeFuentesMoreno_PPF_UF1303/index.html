@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba_Final_CSS</title>
+    <link rel="stylesheet" href="./ASSETS/CSS/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="contenido-header">
+            <img src="./ASSETS/IMAGES/l_bd93d8f4d61e90d1c8163cefdb44c045-removebg-preview.png" alt="Logo_Nivaria">
+                <nav class="navegacion">
+                <a href="#sobre-nosotros">Sobre Nosotros.</a>
+                <a href="#nuestras-tiendas">Nuestras Tiendas</a>
+                <a href="#horario">Horarios</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section id="sobre-nosotros" class="sobre-nosotros">
+            <div class="sobre-nosotros-contenido">
+                <div class="contenedor-sobre-nosotros">
+                    <h2>¿Nos vemos esta tarde?</h2>
+                    <p>Nivaria Center, en pleno corazón de Santa Cruz, renace como el centro comercial de referencia para residentes y visitantes de Tenerife, para un público que demanda tiendas de alta calidad en un entorno cómodo y de lujo.</p>
+                </div>
+                <video class="video"  autoplay muted loop playsinline src="./ASSETS/VIDEOS/202505141826.mp4"></video>
+            </div>
+        </section>
+        <section id="nuestras-tiendas" class="nuestras-tiendas">
+            <p>Date un paseo por nuestras tiendas...</p>
+    <div class="carruseles">
+        <div id="carouselExampleAutoplaying" class="carousel slide  shadow" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                   <div class="carousel-item active">
+                      <img src="./ASSETS/IMAGES/WhatsApp-Image-2024-05-16-at-11.29.12.jpeg" class="  rounded" alt="xclusiv">
+                    </div>
+                    <div class="carousel-item">
+                       <img src="./ASSETS/IMAGES/fundgrube_0.jpg" class="  rounded" alt="ultima">
+                    </div>
+                    <div class="carousel-item">
+                     <img src="./ASSETS/IMAGES/190620_174019_MikelAllica-MINISO.webp" class=" rounded" alt="miniso">
+                    </div>
+                </div>
+            </div>
+            <div id="carouselExampleAutoplaying" class="carousel slide  shadow" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                   <div class="carousel-item active">
+                      <img src="./ASSETS/IMAGES/game-tienda-nivaria.jpg" class="  rounded" alt="game">
+                    </div>
+                    <div class="carousel-item">
+                       <img src="./ASSETS/IMAGES/img-network-canarias.jpg" class="  rounded" alt="ultima">
+                    </div>
+                    <div class="carousel-item">
+                     <img src="./ASSETS/IMAGES/FOTO-MINISO.jpg" class=" rounded" alt="miniso">
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+        <section id="horario" class="horarios">
+            <p>No olvides nuestros horarios para visitarnos...</p>
+            <div class="contenedor-tarjetas">
+                <div class="tarjeta">
+                    <img src="./ASSETS/IMAGES/comerciossecciones_home.png" alt="">
+                    <h2>Comercios</h2>
+                    <p>Lunes a Sábado</p>
+                    <p class="hora">9:30h a 21:30h</p>
+                </div>
+                <div class="tarjeta">
+                    <img src="./ASSETS/IMAGES/hipermercadosecciones_home.png" alt="">
+                    <h2>Supermercado</h2>
+                    <p>Lunes a Sábado</p>
+                    <p class="hora">9:00h a 22:00h</p>
+                </div>
+                <div class="tarjeta">
+                    <img src="./ASSETS/IMAGES/parkingsecciones_home.png" alt="">
+                    <h2>Comercios</h2>
+                    <p>1 Hora gratuito</p>
+                    <p class="hora">9:00h a 00:00h</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+         <div class="Contenedor-Principal"> 
+        <div class="Primer-Contenedor">
+            <h1>Ubicación</h1>
+            <p>Av. Tres de Mayo, 63, 38003 Santa Cruz de Tenerife</p>
+            <h1>Síguenos</h1>
+            <div class="Redes-sociales">
+                <a href="https://www.instagram.com"><img src="./ASSETS/IMAGES/descarga.png" alt="Instagram"></a>
+                <a href="https://x.com/?lang=es"><img class="X" src="./ASSETS/IMAGES/png-transparent-twitter-x-logo-thumbnail-removebg-preview.png" alt="X"></a>
+                <a href="https://www.facebook.com"><img src="./ASSETS/IMAGES/images-removebg-preview.png" alt="Facebook"></a> 
+            </div>
+            <p>&copy; 2025  Todos los derechos reservado.</p>
+        </div>
+        <div class="Segundo-Contenedor">
+            <h1>Formulario de contacto:</h1>
+             <form action="#" method="post">
+                <input placeholder="Ingresa tú nombre" type="text" id="nombre" name="nombre"  autofocus>
+                <br>
+                <input placeholder="Ingresa aquí tu correo electrónico." cols="20" type="email" id="correo" name="Correo">
+                <br>
+                <textarea class="textarea" id="mensaje" name="mensaje" rows="4" cols="50" placeholder="Escribe un mensaje."></textarea>
+                <br>
+                <button>Enviar</button>
+              </form>
+        </div>
+</div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
