@@ -1,0 +1,59 @@
+*{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+
+}
+
+h1{
+    color:dimgrey;
+}
+
+input{
+    background-color: gray;
+    color: black;
+}
+
+.Redes-sociales{
+    display: flex;
+    align-items: center;
+    
+}
+.Redes-sociales img{
+    width: 25px;
+    margin-left: 10px;
+}
+
+.X{
+    height: 20px;
+}
+
+.Contenedor-Principal{
+    display: flex;
+    padding:50px;
+    justify-content: center;
+}
+
+.Primer-Contenedor{
+    margin-right: 50px;
+}
+.Segundo-Contenedor input {
+    border:none;
+    height: 25px;
+    width: 355px;
+    margin-bottom: 10px;
+    background-color: aliceblue;
+
+}
+
+.Segundo-Contenedor button{
+    margin-top: 10px;
+    height: 40px;
+    width: 100px;
+    background-color: white;
+    border-radius: 5px;
+    border-color:dimgray;
+}
+
+.textarea{
+    border: none;
+    background-color: aliceblue;
+}

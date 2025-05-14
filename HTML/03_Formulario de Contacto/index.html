@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de contacto.</title>
+    <link rel="stylesheet" href="./ASSETS/CSS/styles.css">
+
+</head>
+<body>
+    <div class="Contenedor-Principal"> 
+        <div class="Primer-Contenedor">
+            <h1>Ubicación</h1>
+            <p>28 Jackson Blvd Ste 1020 Chicago IL 606604-2340</p>
+            <h1>Síguenos</h1>
+            <div class="Redes-sociales">
+                <a href="https://www.instagram.com"><img src="./ASSETS/IMAGES/descarga.png" alt="Instagram"></a>
+                <a href="https://x.com/?lang=es"><img class="X" src="./ASSETS/IMAGES/png-transparent-twitter-x-logo-thumbnail-removebg-preview.png" alt="X"></a>
+                <a href="https://www.facebook.com"><img src="./ASSETS/IMAGES/images-removebg-preview.png" alt="Facebook"></a> 
+            </div>
+            <p>&copy; 2025  Todos los derechos reservado.</p>
+        </div>
+        <div class="Segundo-Contenedor">
+            <h1>Formulario de contacto:</h1>
+             <form action="#" method="post">
+                <input placeholder="Ingresa tú nombre" type="text" id="nombre" name="nombre" required autofocus><!-- Se utiliza para insertar un campo de texto. El "id" relaciona el labal con el input y "name" la variable de identificación en el Back-end.-->
+                <br>
+                <input placeholder="Ingresa aquí tu correo electrónico." cols="20" type="email" id="correo" name="Correo" required>
+                <br>
+                <textarea class="textarea" id="mensaje" name="mensaje" rows="4" cols="50" placeholder="Escribe un mensaje."></textarea><!-- Se utiliza para insertar un cuadro de texto.-->
+                <br>
+                <button>Enviar</button>
+              </form>
+        </div>
+</div>
+<br>
+    
+</body>
+</html>
