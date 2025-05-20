@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23_Formularios</title>
+    <link rel="stylesheet" href="./ASSETS/CSS/styles.css">
+</head>
+<body>
+    <section class="section"></section>
+    <form method="get" action="./index_gracias.html" class="Formulario">
+        <h2>ENCUESTA DE SATISFACCIÓN DEL CURSO</h2>
+        <p>Por favor completa está encuesta; campos con <span>*</span> son obligatorios.</p>
+            <div class="Datos_personales">
+                <div class="input_1">
+                    <span>*</span><input placeholder="Ingresa aquí tu nombre.." type="text" name="nombre" id="nombre">
+                </div>
+                <div class="input_2">
+                    <span>*</span><input placeholder="Ingresa aquí tu correo electrónico... " type="text" name="correo_electrónico" id="correo_electrónico">
+                </div>  
+        </div> 
+        <div class="valoracion">
+            <div class="select">
+                <label for="Valoración"> Valoración (1-4)<span>*</span>:</label>
+                <select name="valoracion" id="valoracion">
+                    <option value="es">1 - No lo recomendaría.</option>
+                    <option value="mx">2 - Lo recomendaría con inseguridad. </option>
+                    <option value="ar">3 - Lo recomendaría.</option>
+                    <option value="co">4 - Definitivamente lo recomendaría.</option>
+                </select>
+            </div>
+            <div class="recomendar">
+                <label for="recomendar">Recomendarías<span>*</span>:</label>
+                <div class="recomendar_inputs">
+                    <input type="radio" name="recomendar"><label for="recomendar">Sí</label>
+                    <input type="radio" name="recomendar"><label for="recomendar">No</label></div> 
+            </div>
+                 
+        </div>
+        <div class="comentarios">
+            <textarea placeholder="Añade aquí lo que desees comentar..." name="comentarios" id="comentarios"></textarea>
+        </div>
+        <div class="botones">
+             <button class="btn_borrar" type="reset">Borrar</button>
+             <button class="btn_enviar" type="submit">Enviar</button>
+        </div>
+    </form>
+    
+     <span class="ri-asterisk"></span>"ri-asterisk"
+</body>
+</html>
