@@ -1,0 +1,267 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+
+.video_fondo{
+    position: fixed;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    min-height: 100vh;
+    min-width: 100vw;
+    filter: brightness(0.5);
+    object-fit: cover;
+}
+
+
+/* confirmacion.html */ 
+
+.contenedor_gracias {
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vh;
+    height: 200px;
+    text-align: center;
+    
+}
+
+.contenedor_gracias p{
+    text-align: center;
+    padding: 30px;
+    
+}
+
+.contenedor_gracias h1{
+    font-size: 60px;
+    color:#0ff;
+    text-shadow:
+    1px 1px 2px #00f,        /* sombra suave */
+    0 0 10px #00f,           /* brillo externo */
+    0 0 20px #00f,           /* más brillo */
+    0 0 30px #0ff;           /* mezcla azul y cian */
+}
+
+.contenedor_gracias a {
+    text-decoration: none;
+    background-color: #0ff;
+    border-radius: 15px;
+    padding: 10px;
+    transition: all ease-out 0.4s;
+    color: black;
+    box-shadow: 
+    1px 1px 2px #00f,        /* sombra suave */
+    0 0 10px #00f,           /* brillo externo */
+    0 0 20px #00f,           /* más brillo */
+    0 0 30px #0ff;           /* mezcla azul y cian */ ;
+}
+
+.contenedor_gracias a:hover{
+    background-color: white;
+}
+
+
+/* index.html */ 
+
+.Formulario{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    width: 700px;
+    box-shadow: 
+    1px 1px 2px #00f,        /* sombra suave */
+    0 0 10px #00f,           /* brillo externo */
+    0 0 20px #00f,           /* más brillo */
+    0 0 30px #0ff;           /* mezcla azul y cian */ ;
+}
+
+.Formulario span{
+    color: red;
+    font-size: 15px;
+}
+
+
+.Formulario h2{
+    text-align: center;
+    font-size: 30px;
+    color: black;
+}
+
+.Formulario p{
+    font-size: 10px;
+    text-align: end;
+    color: black;
+}
+
+.input_2{
+    margin-bottom: 20px;
+}
+
+.input_1{
+    margin-top: 20px;
+}
+
+.input_2 input{
+    margin-bottom: 20px;
+    margin: 3px;
+    width:681px ;
+    border-radius:5px;
+    color: white;
+    resize: none;
+    outline: none;
+    background-color: black;
+    text-shadow: 
+    1px 1px 2px #00f,       
+    0 0 10px #00f,           
+    0 0 20px #00f,           
+    0 0 30px #0ff;
+
+}
+
+
+.input_1 input{
+    margin-top: 20px;
+    margin: 3px;
+    width:681px ;
+    border-radius:5px;
+    color: white;
+    resize: none;
+    outline: none;
+    background-color: black;
+    text-shadow: 
+    1px 1px 2px #00f,       
+    0 0 10px #00f,           
+    0 0 20px #00f,           
+    0 0 30px #0ff;
+}
+
+
+.valoracion{
+    display: flex;
+    text-align: center;
+    margin-bottom: 20px;
+    gap:100px;
+    justify-content: center;
+}
+
+.valoracion select{
+    color: #0ff;
+    resize: none;
+    outline: none;
+    background-color: black;
+    text-shadow:
+    1px 1px 2px #00f,       
+    0 0 5px #00f,           
+    0 0 10px #00f,           
+    0 0 15px #0ff;
+}
+
+.valoracion label{
+    color: black;
+    font-weight: bold;
+}
+.recomendar_inputs{
+    display: flex;
+    gap: 20px;
+}
+
+.recomendar_inputs input[type="radio"]{
+    accent-color: black;
+}
+
+.recomendar_inputs label{
+    color: #0ff; 
+    text-shadow:
+    1px 1px 2px #00f,       
+    0 0 5px #00f,           
+    0 0 10px #00f,           
+    0 0 15px #0ff;
+
+}
+.comentarios{
+    display: flex;
+    justify-content: center;
+}
+.comentarios textarea{
+    width: 690px;
+    height: 60px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    resize: none;
+    outline: none;
+    color: white;
+    background-color: black;           
+    text-shadow:  
+    1px 1px 2px #00f,        
+    0 0 10px #00f,           
+    0 0 20px #00f,           
+    0 0 30px #0ff;           
+}
+
+.botones{
+    display: flex;
+    justify-content: end;
+    gap:20px;
+    
+}
+
+.btn_borrar{
+    background-color: #0ff;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    width: 80px;
+    height: 25px;
+    transition: all ease-in 0.3s;
+}
+
+.btn_borrar:hover{
+    background-color: white;
+    color: black;
+    border: #0ff;
+     box-shadow:
+    1px 1px 2px #00f,       
+    0 0 10px #00f,           
+    0 0 20px #00f,           
+    0 0 30px #0ff
+}
+
+.btn_enviar{
+    background-color: #0ff ;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    width: 80px;
+    height: 25px;
+    transition: all ease-in 0.3s;
+    
+}
+
+.btn_enviar:hover{
+    background-color: white;
+    color: black;
+     box-shadow:
+    1px 1px 2px #00f,       
+    0 0 10px #00f,           
+    0 0 20px #00f,           
+    0 0 30px #0ff
+}
+
+input::placeholder{
+    color: #0ff;
+
+}
+
+textarea::placeholder{
+    color:#0ff
+}

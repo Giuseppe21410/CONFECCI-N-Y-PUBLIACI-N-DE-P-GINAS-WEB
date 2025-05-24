@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23_Formularios</title>
+    <link rel="stylesheet" href="./ASSETS/CSS/styles.css">
+</head>
+<body>
+    <video class="video_fondo" autoplay loop muted playsinline src="./ASSETS/VIDEOS/fondo_loop.mp4"></video>
+    <section class="section"></section>
+    <form method="get" action="./confirmación.html" class="Formulario">
+        <h2>ENCUESTA DE SATISFACCIÓN</h2>
+        <p>Por favor completa está encuesta; campos con <span>*</span> son obligatorios.</p>
+            <div class="Datos_personales">
+                <div class="input_1">
+                    <span>*</span><input required placeholder="Ingresa aquí tu nombre.." type="text" name="nombre" id="nombre">
+                </div>
+                <div class="input_2">
+                    <span>*</span><input required placeholder="Ingresa aquí tu correo electrónico... " type="text" name="correo_electrónico" id="correo_electrónico">
+                </div>  
+        </div> 
+        <div class="valoracion">
+            <div class="select">
+                <label for="Valoración"> Valoración (1-4)<span>*</span>:</label>
+                <select required name="valoracion" id="valoracion">
+                    <option value="1_">1 - No lo recomendaría.</option>
+                    <option value="2_">2 - Lo recomendaría con inseguridad. </option>
+                    <option value="3_">3 - Lo recomendaría.</option>
+                    <option value="4_">4 - Definitivamente lo recomendaría.</option>
+                </select>
+            </div>
+            <div class="recomendar">
+                <label  for="recomendar">Recomendarías<span>*</span>:</label>
+                <div class="recomendar_inputs">
+                    <input  type="radio" name="recomendar"><label for="recomendar">Sí</label>
+                    <input type="radio" name="recomendar"><label for="recomendar">No</label></div> 
+            </div>
+                 
+        </div>
+        <div class="comentarios">
+            <textarea required placeholder="Añade aquí lo que desees comentar..." name="comentarios" id="comentarios"></textarea>
+        </div>
+        <div class="botones">
+             <button class="btn_borrar" type="reset">Borrar</button>
+             <button class="btn_enviar" type="submit">Enviar</button>
+        </div>
+    </form>
+</body>
+</html>
