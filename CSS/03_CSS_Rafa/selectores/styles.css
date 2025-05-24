@@ -1,0 +1,65 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+/* a {
+    text-decoration: none;
+} */
+
+.primer_parrafo {
+    font-size: 15px;
+    color: blue;
+}
+
+.boton {
+    color: #fff;
+    background-color: #aa1212;  /* azul */
+    font-weight: bold;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid #5D6063;  /* gris oscuro */
+    border-radius: 5px;
+    /* definimos el ancho del boton */
+    width: 200px;
+    margin: 20px auto;
+}
+
+.pagina {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.cta {
+    font-style: italic;
+    background-color: #eeb75a;
+}
+
+.primer_parrafo em {
+    font-style: normal;
+    color:purple
+}
+
+.articulo h2 .subtitulo em {
+    /* estilo especial */
+    color:#aa1212;
+}
+
+/* PSEUDO - CLASES */
+a:link {
+    color: blue;
+    text-decoration: none;
+}
+
+a:hover {
+    color:aqua;
+    text-decoration: underline;
+}
+
+a:visited {
+    color:purple;
+}
+
+a:active {
+    color:red;
+}

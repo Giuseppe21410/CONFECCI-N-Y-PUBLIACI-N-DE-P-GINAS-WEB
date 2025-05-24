@@ -1,0 +1,41 @@
+/* Cambia el fondo del primer elemento <li> de cada lista a rosa */
+ul li:first-child {
+    background-color: pink;
+}
+
+/* Haz que el último párrafo de cada <section> tenga texto en cursiva */
+section p:last-child {
+    font-style: italic;
+}
+
+/* Colorear en azul los elementos impares de una lista */
+ul li:nth-child(odd) {
+    color: blue;
+}
+
+/* Resaltar en negrita el 3er párrafo de cada sección */
+section p:nth-child(3) {
+    font-weight: bold;
+}
+
+/* Colorear en naranja el 1er <h2> dentro de un artículo */
+article h2:first-of-type {
+    color: orange;
+}
+
+/* Resaltar con fondo celeste el último input de un formulario */
+form input:last-of-type {
+    background-color: lightblue;
+}
+
+/* Ocultar elementos vacios dentro de una sección */
+section :empty {
+    display: none;
+}
+
+/* Selecciona el único elemento <p> en una tarjeta */
+.tarjeta p:only-of-type {
+    background-color: #f0f8ff;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+}

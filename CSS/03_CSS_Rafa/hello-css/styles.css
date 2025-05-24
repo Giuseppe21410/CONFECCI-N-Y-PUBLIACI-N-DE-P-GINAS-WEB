@@ -1,0 +1,36 @@
+/*************************************/
+/**** DECLARCIÓN ESTILOS  ************/
+/*************************************/
+/* */
+body {
+    color: #414141; /*********definir color rojo**********/
+    font-size: 18px;
+    background: #eeeeee;
+}
+
+header {
+    font-size: 30px;
+}
+
+h1, h2, h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: red;
+}
+
+
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+ul {
+    list-style-type: circle;
+}
+
+ol {
+    list-style-type: upper-roman;
+}
