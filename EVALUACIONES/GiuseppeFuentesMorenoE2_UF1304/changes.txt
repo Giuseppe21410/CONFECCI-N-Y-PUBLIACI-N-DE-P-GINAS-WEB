@@ -1,0 +1,19 @@
+--Cambios realizados en la plantilla original “Creative”:
+A partir de la plantilla base proporcionada por Start Bootstrap, he realizado una serie de modificaciones para adaptarla a una página web de fotografía profesional. A continuación, detallo los principales cambios implementados:
+
+1. Sustitución de la imagen principal:
+He reemplazado la imagen de cabecera que aparece al inicio del sitio por una fotografía de alta resolución que representa el estilo visual de la marca. Esta nueva imagen sirve como primer impacto visual para el visitante y ayuda a transmitir el enfoque artístico y profesional del sitio web.
+
+2.Inserción de contenido personalizado:
+Se ha añadido contenido específico que describe la naturaleza de la página, enfocado en el mundo de la fotografía. Este contenido ha sido cuidadosamente redactado para reflejar el estilo del estudio fotográfico, los valores de la marca y los servicios que se ofrecen, manteniendo una estética coherente con el diseño original de la plantilla.
+
+Estructuración en secciones clave:
+Para mejorar la navegación y la experiencia del usuario, he dividido la web en tres secciones principales claramente identificables:
+
+-Inicio: Contiene la imagen principal y sirve como presentación visual del sitio.
+
+-Servicios: Sección personalizada con iconos y descripciones de los servicios fotográficos ofrecidos, tales como sesiones profesionales, cobertura de eventos, edición digital e impresión.
+
+-Contacto: Acceso directo para que los visitantes puedan comunicarse con el fotógrafo, ya sea para consultas o reservas.
+
+Estas modificaciones permiten adaptar la plantilla original a una propuesta más funcional y orientada a un proyecto real, profesionalizando su aspecto y haciéndola útil para un negocio fotográfico.
