@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tipos de Datos en JavaScript</title>
+</head>
+<body>
+  <h1>Abre la consola (F12) para ver los ejemplos</h1>
+  <script>
+    // -------- Declaración de variables --------
+    
+    // Variable que puede cambiar su valor
+    let nombre = "Juan"; // tipo: string (cadena de texto)
+    
+    // Constante que no puede cambiar su valor
+    const PI = 3.1416; // tipo: number (número decimal)
+    
+    // Variable de alcance global (no se recomienda usar `var` en proyectos modernos)
+    var edad = 30; // tipo: number
+
+    // -------- Tipos de datos básicos --------
+    
+    let texto = "Hola mundo"; // string
+    let numero = 42; // number
+    let decimal = 3.14; // number
+    let booleano = true; // boolean
+    let indefinido; // undefined (no tiene valor aún)
+    let nulo = null; // null (valor intencionalmente vacío)
+    
+    // -------- Tipos de datos complejos --------
+    
+    let arreglo = [1, 2, 3, "cuatro"]; // array (lista)
+    let objeto = {
+      nombre: "Ana",
+      edad: 25
+    }; // Objeto: Conjunto de elementos clave-valor.
+
+    // -------- Mostrar todos en consola --------
+
+    console.log("Texto:", texto);
+    console.log("Número entero:", numero);
+    console.log("Número decimal:", decimal);
+    console.log("Booleano:", booleano);
+    console.log("Indefinido:", indefinido);
+    console.log("Nulo:", nulo);
+    console.log("Arreglo:", arreglo);
+    console.log("Objeto:", objeto);
+    console.log("Nombre desde objeto:", objeto.nombre);
+
+    // -------- Tipo de dato --------
+    console.log("Tipo de texto:", typeof texto);        // string
+    console.log("Tipo de número:", typeof numero);      // number
+    console.log("Tipo de booleano:", typeof booleano);  // boolean
+    console.log("Tipo de indefinido:", typeof indefinido); // undefined
+    console.log("Tipo de nulo:", typeof nulo);          // object (curiosidad histórica)
+  </script>
+</body>
+</html>

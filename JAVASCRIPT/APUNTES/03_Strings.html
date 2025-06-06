@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Funciones de Strings en JavaScript</title>
+</head>
+<body>
+  <h1>Abre la consola (F12) para ver los ejemplos de strings</h1>
+  <script>
+    // -------- Declaración de strings --------
+    let texto1 = "Hola";
+    let texto2 = 'Mundo'; // Se pueden declarar con comillas simples y dobles.
+
+    // -------- Concatenación --------
+    let concatenado = texto1 + " " + texto2;
+    console.log("Concatenado:", concatenado);
+
+    // -------- Template literals (plantillas) -------- // 
+    let nombre = "Juan";
+    let saludo = `Hola, ${nombre}! ¿Cómo estás?`;
+    console.log("Template literal:", saludo);
+    // Con concanetación tradicional:
+    let saludo_1= "Hola,"+ nombre + "Cómo estás?";
+
+    // -------- Funciones y métodos útiles de strings -------- // 
+    let cadena = "  JavaScript es genial  ";
+
+    console.log("Original:", cadena);
+
+    // Longitud
+    console.log("Longitud:", cadena.length);
+
+    // Trim (elimina espacios al principio y final)
+    console.log("Trim:", cadena.trim());
+
+    // To upper/lower case
+    console.log("Mayúsculas:", cadena.toUpperCase()); // Convierte todas en mayúsculas.
+    console.log("Minúsculas:", cadena.toLowerCase()); // Convierte todas en minusculas.
+
+    // IndexOf / lastIndexOf
+    console.log("Índice de 'es':", cadena.indexOf("es"));
+    console.log("Último índice de 'a':", cadena.lastIndexOf("a")); 
+
+    // Includes: Devuelve "true" o "false" si la palabra se incluye en la cadena.
+    console.log("¿Incluye 'genial'?:", cadena.includes("genial"));
+
+    // StartsWith / EndsWith
+    console.log("¿Empieza con 'Java'?:", cadena.trim().startsWith("Java")); // Devuelve true si la  cadena comienza con "Java".
+    console.log("¿Termina con 'genial'?:", cadena.trim().endsWith("genial")); // Devuelve true si la cadena acaba con "genial".
+
+    // Replace / replaceAll 
+    console.log("Reemplaza 'genial' por 'increíble':", cadena.replace("genial", "increíble"));
+    //raplaceAll, remplaza todas las palabras por el valor.
+
+    // Slice: Extrae una parte de la cadena.
+    console.log("Slice (0,10):", cadena.slice(0, 10));
+
+    // Split: Separa la cadena de texto en un array en función de una condición.
+    let palabras = cadena.trim().split(" ");
+    console.log("Split:", palabras);
+
+    // Repeat
+    console.log("Repeat 3 veces:", texto1.repeat(3));
+
+    // charAt:
+    console.log("charAt(0):", cadena.charAt(0)); // Devuelve el caracter que esta en la posición 0.
+
+    // PadStart / PadEnd
+    let numero = "5";
+    console.log("padStart:", numero.padStart(3, "0")); // "005" : Rellena la cadena por el inicio con el carácter dado ("0"), hasta alcanzar la longitud especificada (3)
+    console.log("padEnd:", numero.padEnd(3, "0")); // "500" : Rellena la cadena por el final con el carácter dado, hasta alcanzar la longitud indicada.
+
+
+    // Match (expresiones regulares)
+    let regex = /a/g;
+    console.log("Match con /a/g:", cadena.match(regex));
+
+    // toString
+    let numero_1= 200;
+    console.log("El número transformado a cadena de texto es:", toString(numero_1))
+
+    // toNumbre
+    let cadena_1="100"
+    console.log("La cadena de texto a número es:")
+
+  </script>
+</body>
+</html>
