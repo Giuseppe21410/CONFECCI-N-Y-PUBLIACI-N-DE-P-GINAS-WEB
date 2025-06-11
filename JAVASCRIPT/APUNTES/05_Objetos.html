@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apuntes sobre Objetos en JavaScript</title>
+</head>
+<body>
+  <script>
+    // Definición básica de objeto: Es una colección de pares clave-valor. Se usa para representar entidades con propiedades y comportamiento.
+    const persona = {
+      nombre: "Juan",
+      edad: 30,
+      saludar: function() {
+        console.log("Hola, me llamo " + this.nombre);
+      }
+    };
+
+    // Acceso a propiedades
+    console.log(persona.nombre); // Juan
+    console.log(persona["edad"]); // 30
+
+    // Llamada a método
+    persona.saludar(); // Hola, me llamo Juan
+
+    // Agregar nueva propiedad
+    persona.apellido = "Pérez";
+    console.log(persona.apellido); // Pérez
+
+    // Eliminar propiedad
+    delete persona.edad;
+    console.log(persona.edad); // undefined
+
+    // Recorrer propiedades
+    for (let clave in persona) {
+      console.log(clave + ": " + persona[clave]);
+    }
+
+    // Se crean objetos con la función constructora: 
+    function Persona(nombre, edad) {
+      this.nombre = nombre;
+      this.edad = edad;
+    }
+      const p1 = new Persona("Ana", 25);  
+      
+    // Se crean funciones con newObject():
+    const coche = new Object();
+      coche.marca = "Toyota";
+      coche.modelo = "Corolla";      
+
+    // Métodos con this, que hace referencia a la propiedad.
+    const coche = {
+      marca: "Toyota",
+      modelo: "Corolla",
+      arrancar() {
+        console.log(this.marca + " " + this.modelo + " está arrancando...");
+      }
+    };
+    coche.arrancar();
+
+    // Metodos útiles: 
+    Object.keys(persona); // ["nombre", "edad", "saludar"] Object.keys, te devuelve las claves del objeto.
+    Object.values(persona); // Los campos de las claves del objeto.
+    Object.entries(persona); // Las entradas clave-valor del objeto persona.
+  </script>
+</body>
+</html>

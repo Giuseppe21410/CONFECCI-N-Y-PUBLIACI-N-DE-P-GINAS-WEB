@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios de objetos:</title>
+</head>
+<body>
+    <script>
+        // 1. Crear y mostrar un objeto:
+
+        const libro={
+            titulo: 1984,
+            autor: "Maria",
+            año:1918,
+        };
+        console.log(` El título del libro es ${libro.titulo}`);
+        console.log(` La autora del libro es ${libro.autor}`);
+        console.log(` El año de creación del libro es ${libro.año}`);
+
+        // Agrega un método a un objeto:
+
+        const libro_1={
+            titulo: 1990,
+            autor: "Jose",
+            año:1920,
+            mostrar_resumen(){
+                return `El título es ${this.titulo} y el autor ${this.autor}`;
+            }
+        };
+
+        console.log(libro.mostrar_resumen())
+
+        // Usar ObjectKeys y ObjectValues:
+        const usuario={
+            nombre:"Giuseppe",
+            edad: 20,
+            correo:"joan@gmail.com",
+        }
+
+        console.log(`Las claves son ${Object.keys.usuario}.`)
+        console.log(`Los valors son ${Object.values.usuario}`)
+
+        // Combina dos objetos en uno:
+
+        const persona={
+            nombre:"Giuseppe",
+            edad:25,
+        }
+
+        const contacto={
+            numero:+34667879678,
+        }
+
+        const perfil_completo={...persona,...contacto}; // Se combinan con el uso de spread operator.
+    </script>
+</body>
+</html>

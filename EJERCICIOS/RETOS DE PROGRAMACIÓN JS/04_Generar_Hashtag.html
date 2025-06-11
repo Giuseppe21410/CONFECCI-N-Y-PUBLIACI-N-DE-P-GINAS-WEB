@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04_Generador de Hashtag</title>
+</head>
+<body>
+    <script>
+    let cadena = "Mi primer Hashtag";
+
+    let array_cadena = cadena.split(" ");
+
+    let Hashtag = "#";
+
+    for (let i = 0; i < array_cadena.length; i++) {
+        Hashtag += array_cadena[i].charAt(0).toUpperCase() + array_cadena[i].slice(1).toLowerCase();
+    }
+    console.log(Hashtag);  // Resultado: #MiPrimerHashtag
+</script>
+
+    
+</body>
+</html>

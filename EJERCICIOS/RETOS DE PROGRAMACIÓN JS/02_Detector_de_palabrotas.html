@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_Detector_de_palabrotas.</title>
+</head>
+<body>
+    <script>
+        let frase="Eres muy tonto y gilipollas";
+        let palabrotas=["tonto","gilipollas"];
+
+        for (let i=0; i<palabrotas[i]; i++){
+             let palabra= palabrotas[i];
+             let regexp= new RegExp(palabra, "gi"); // Crea una nueva "RegExp":Expresión regular, que filtra las palabras de la frase por las palabrotas.
+             frase= frase.replace(regexp,"*".repeat(palabra.length));
+        }
+
+        console.log(frase);
+    </script>
+    
+</body>
+</html>

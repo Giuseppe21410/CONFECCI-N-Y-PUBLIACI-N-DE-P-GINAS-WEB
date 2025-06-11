@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05_Cuenta_Letras__palabras.</title>
+</head>
+<body>
+    <script>
+        let texto="Hola mundo feliz";
+
+        let contar_caracteres= texto.replace(/^a-zA-Z/g,"").length;
+
+        let contar_palabras= texto.trim().split(/\s+/).length();
+
+        console.log(`El número de caracteres es ${contar_caracteres} y el número de palabras ${contar_palabras}`);
+
+        // https://regexr.com Para expresiones regulares.
+    </script>
+    
+</body>
+</html>

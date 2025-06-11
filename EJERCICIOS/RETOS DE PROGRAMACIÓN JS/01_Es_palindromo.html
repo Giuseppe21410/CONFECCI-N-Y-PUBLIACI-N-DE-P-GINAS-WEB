@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Es palindromo?</title>
+</head>
+<body>
+    <script> // Tenemos que comprobar que una cadena es un palindromo, es decir, que se lee por igual 
+        let cadena="Anita lava la tina";
+
+        cadena_1= cadena.replace(" ",""); 
+
+        cadena_2=cadena.invert();
+
+        let es_palindromo= cadena_1==cadena_2;
+
+        console.log(`La cadena de texto ${cadena} ${es_palindromo ? "es" : "no es"} un polindromo.`)
+        // 
+    </script>
+    
+</body>
+</html>
