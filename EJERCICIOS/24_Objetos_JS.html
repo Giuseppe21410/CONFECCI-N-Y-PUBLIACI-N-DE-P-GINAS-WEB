@@ -53,6 +53,51 @@
         }
 
         const perfil_completo={...persona,...contacto}; // Se combinan con el uso de spread operator.
+
+       // Comparar dos objetos: 
+
+       const persona_1={
+         edad:29,
+       }
+
+       const persona_2={
+        edad:29,
+       }
+
+       if (persona_1.edad == persona_2.edad){
+        console.log("Ambas personas tienen la misma edad.")
+       } else{
+        console.log("Ambas personas tienen edades distintas.")
+       }
+
+       // Recorre los elementos clave-valor de un objeto: 
+       for (consrt [clave,valor] of Object.entries(persona)){
+        console.log(`${clave}: ${valor}`);
+       }
+
+       // Elimina y añade valores a un objeto: 
+       const coche={
+        color:"rojo",
+        year:1997,
+        marca:"Opel",
+       }
+
+       coche.disponibilidad = true; // Añade la propiedad disponibilidad.
+
+       delete coche.color; // Elimina la propiedad color.
+
+       // Filtra los productos en stock que están por debajo de una cantidad: 
+       const producto = [
+        {nombre:"Coches", stock: 10},
+        {nombre:"Bolis", stock: 4},
+    ]
+
+    function buscar_stock(lista){
+        return lista.filter( producto => producto.stock <5);
+    }
+
+    console.log("Los productos con una cantidad menor que 5 son:")
+    console.log(buscar_stock(producto))
     </script>
 </body>
 </html>
