@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Apuntes sobre switch en JavaScript</title>
+  <style>
+    body {
+      font-family: Consolas, monospace;
+      background: #f9f9f9;
+      color: #333;
+      padding: 20px;
+    }
+    pre {
+      background: #1e1e1e;
+      color: #dcdcdc;
+      padding: 20px;
+      border-radius: 10px;
+      overflow-x: auto;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <h1>Apuntes sobre <code>switch</code> en JavaScript</h1>
+  <pre id="contenido"></pre>
+
+  <script>
+// ===========================================================
+// SWITCH EN JAVASCRIPT
+// ===========================================================
+
+// DEFINICIÓN:
+// La sentencia switch evalúa una expresión y compara su resultado con distintos valores posibles (case).
+// Cuando encuentra una coincidencia, ejecuta el bloque correspondiente.
+
+// SINTAXIS BÁSICA:
+let expresion = "B";
+
+switch (expresion) {
+  case "A":
+    console.log("Caso A");
+    break;
+  case "B":
+    console.log("Caso B");
+    break;
+  case "C":
+    console.log("Caso C");
+    break;
+  default:
+    console.log("Ningún caso coincide");
+}
+
+// OUTPUT: "Caso B"
+
+// ==========================================
+// break:
+// Detiene la ejecución del switch.
+// Si se omite, se ejecutan los siguientes casos (fall-through).
+
+let dia = 2;
+switch (dia) {
+  case 1:
+    console.log("Lunes");
+    break;
+  case 2:
+  case 3:
+    console.log("Martes o Miércoles");
+    break;
+  default:
+    console.log("Otro día");
+}
+
+// Agrupación de casos (2 y 3): útil para condiciones compartidas.
+
+// ==========================================
+// default:
+// Se ejecuta si ningún case coincide.
+// Es opcional pero recomendable incluirlo.
+
+let fruta = "sandía";
+
+switch (fruta) {
+  case "manzana":
+    console.log("Es una manzana");
+    break;
+  case "naranja":
+    console.log("Es una naranja");
+    break;
+  default:
+    console.log("Fruta no reconocida");
+}
+
+// OUTPUT: "Fruta no reconocida"
+
+// ==========================================
+// EVALUACIÓN ESTRICTA (===)
+// switch usa comparación estricta (===), por lo tanto:
+
+let valor = "5";
+
+switch (valor) {
+  case 5:
+    console.log("Número 5");
+    break;
+  case "5":
+    console.log("Cadena '5'");
+    break;
+}
+
+// OUTPUT: "Cadena '5'"
+
+// ==========================================
+// switch vs if...else
+// switch es más legible cuando se comparan muchos valores contra la misma variable.
+// if...else es más flexible para condiciones complejas (rangos, operadores lógicos).
+
+let nota = 7;
+
+switch (true) {
+  case (nota >= 9):
+    console.log("Sobresaliente");
+    break;
+  case (nota >= 7):
+    console.log("Notable");
+    break;
+  case (nota >= 5):
+    console.log("Aprobado");
+    break;
+  default:
+    console.log("Suspenso");
+}
+
+// Técnica avanzada: usar true como expresión para evaluar condiciones como en if.
+
+// ==========================================
+// EJEMPLO PRÁCTICO
+
+let opcion = "guardar";
+
+switch (opcion) {
+  case "guardar":
+    console.log("Guardando archivo...");
+    break;
+  case "cargar":
+    console.log("Cargando datos...");
+    break;
+  case "salir":
+    console.log("Cerrando aplicación...");
+    break;
+  default:
+    console.log("Opción inválida");
+}
+
+// ===========================================================
+// RESUMEN:
+// - switch evalúa una expresión contra múltiples valores.
+// - break evita que se sigan ejecutando más casos.
+// - default se ejecuta si no hay coincidencias.
+// - Usa comparación estricta (===).
+// - Útil para decisiones múltiples sobre un mismo valor.
+// ===========================================================
+
+  </script>
+</body>
+</html>

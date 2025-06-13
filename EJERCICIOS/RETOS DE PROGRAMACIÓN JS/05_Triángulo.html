@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triángulo</title>
+</head>
+<body>
+    <script>
+        for (var i=1; i<=31; i++){
+            line="";
+            if (i<10){
+                for(let x=0;x<i;x++){
+                    line+= " " + i + " ";
+                }
+                console.log(line+ "\n");
+            }else if (i==31){
+                for(let x=0;x<90;x++){
+                    line+="*";
+                }
+                console.log(line + "\n");
+            } else{
+                for(let x=0;x<i;x++){
+                    line+= i+ " ";
+                }
+                console.log(line + "\n");
+            }
+        }
+    </script>
+    
+</body>
+</html>

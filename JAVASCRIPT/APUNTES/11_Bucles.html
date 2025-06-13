@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11_Bucles</title>
+</head>
+<body>
+    <script>
+        // Los bloques permiten ejecutar un bloque de código un número de veces. 
+
+        // BUCLE FOR: 
+        // Se representa con tres expresiones: 
+        //for (expression 1; expression 2; expression 3) {
+         // code block to be executed
+          // }
+        // La primera expresión es opcional, se ejecuta una vez antes de la iteración y por lo general define el índice del bucle.
+        // La segunda la condición para ejecutar el bloque.
+        // La tercera se ejecuta cuando el for ya se ha ejecutado e incrementa o decrementa el ínidice de iteración. También opcional.
+        for (let i = 0; i < 5; i++) {
+          text += "The number is " + i + "<br>";
+        }        
+        // En las expresiones opcionales tenemos: 
+        let a=2;
+        for (;a<2;){
+            console.log(`El número es ${a}`);
+            a++;
+        }
+
+        // Podemos usar "var" para declarar el índice en un bucle: 
+        for (var i = 0; i < 5; i++) {
+          text += "The number is " + i + "<br>";
+        } // La principal diferencia es que la variable se redeclara fuera del bucle, pero con "let" no.
+
+
+        // BUCLE FOR IN: 
+        // Es un tipo de bucle que recorre las propiedades de un objeto o las propiedades de un array. No uses For In sobre Arrays si el orden es importante. Ejemplos:
+        const person = {fname:"John", lname:"Doe", age:25};
+        let text = "";
+        for (let x in person) { // Cada iteración devuelve una propiedad de persona.
+            text += person[x];
+        }
+
+        const numbers = [45, 4, 9, 16, 25]; // Bucle FOR IN para un array iterable.
+         let txt = "";
+         for (let x in numbers) {
+           txt += numbers[x];
+         }             
+
+         // forEach() método que llama a una función una vez por cada elemento del array:
+         const numbers_1 = [45, 4, 9, 16, 25];
+
+        let txt_1 = "";
+        numbers.forEach(myFunction);
+
+        function myFunction(value, index, array) { // ForEach pasa los parametros index (Indice d ela función.), value y array que es en este caso "numbres".
+          txt_1 += value;
+        }         
+
+        /// FOR OR:
+        // El bucle "for of" recorre los valores de un objeto iterable como Arrays, cadenas de texto...
+        // Bucle "for of" sobre un array: 
+        const cars = ["BMW", "Volvo", "Mini"];
+        let text_2 = "";
+        for (let x of cars) {
+          text += x;
+        }
+
+        // ... sobre un string:
+        let language = "JavaScript";
+         let text_3 = "";
+         for (let x of language) {
+            text += x;
+         }      
+         
+         /// Bucle while y do...while: 
+         // El bucle while, ejecuta un bloque de código mientras la condición que específica sea verdadera y el bucle do...while, es una variante del bucle anterior que de forma natural siempre ejecuta el bloque de código una vez: 
+
+         while (i<10){
+          text_4+= "This number is" + i;
+          i++
+         }
+
+         do {
+          text_5+="This number is" + i;
+          i++
+         } while(i<10)
+
+         // El mismo bloque de código para sus dos variantes.
+
+         /// BREAK Y CONTINUE: 
+         // La diferencia entre ambos, es que "break" sale de la iteración y "continue" salta una iteración en el bucle:
+
+         for (let i=0;i<10;i++){
+          text_6+="The number is" + i;
+          if (i==6){break} ;// Cuando "i" es igual a 6 sale de la iteración.
+          i++;
+         }
+
+         for (let i=0;i<10;i++){
+          text_7+="The number is" + i;
+          if (i==6){continue} ;// Cuando "i" es igual a 6 salta una iteración y no imprime el 6.
+          i++;
+         }
+
+         // ITERADORES: 
+         // Este protocolo define como producir una secuencia de valores a partir de un objeto. Esto sucede cuando se le implementa un metodo next().
+         // El metodo next() debe devolver un objeto con dos propiedades: Value y Done. El valor lo devulve la iteración (Puede omitirse si done:True). Done puede ser True si la iteración se ha completado, y False si la iteración ha producido un nuevo valor.
+
+         function myNumbers() {
+        let n = 0;
+        return {
+          next: function() {
+            n += 10;
+            return {value:n, done:false};
+          }
+        };
+      }
+
+      // Create Iterable
+      const n = myNumbers();
+      n.next(); // Returns 10
+      n.next(); // Returns 20
+      n.next(); // Returns 30       
+
+    </script>             
+</body>
+</html>

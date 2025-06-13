@@ -66,6 +66,13 @@
 
     // Operadores de comparación: 
     console.log( a < b) // Al igual que >, =>, <=, == (Igual) y ===(Identico), != (Distinto de...)
+
+    // Con Math.random(), puedes devolver un valor del 0 al 1. 
+    console.log(Math.foor(Math.random()*101)) // Te ofrece un número random del 1 al 100.
+    // La función correcta que específica un valor máximo  y mínimo es: 
+    function getRndInteger(min, max) {
+      return Math.floor(Math.random() * (max - min + 1) ) + min;
+  }     
     </script>
 
 

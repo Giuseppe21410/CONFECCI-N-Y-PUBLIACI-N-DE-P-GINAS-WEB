@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07_Fechas</title>
+</head>
+<body>
+    <p id="fecha"></p>
+    <script>
+        // Para definir sobreescribir un string de la fecha en de la zona usuario del dispositivo, utilizamos "Date()" pudiendole pasar un día concreto como "":
+        const d= Date();
+        document.getElementById("fecha").innerHTML= d;// Thu Jun 12 2025 16:33:48 GMT+0100 (hora de verano de Europa occidental)
+        // Como un objeto, usamos "new Date()":
+        const e= new Date();
+        // Podemos específicar 7 números en el setido de año,mes, día, hora, minuto, segundo y milisegundos: 
+        const f= new Date(2025,6,12,16,33,58) // Se representa hasta segundos.
+
+        // GET METHODS: 
+        // A partir de una fecha podemos obtener la hora, día, año...
+        g_1= e.getFullYear // Obtiene el año como un número de 4 digitos.
+        console.log(g_1) 
+
+        g_2= e.getDate // Obtiene un número del (1-31).
+
+        g_3=e.getMonth // Obtiene un mes del (1-12). 
+        
+        g_4=e.getDay // Obtiene un día de la semana.
+
+        // SET METHODS: 
+        // A partir de una fecha, podemos modificar sus valores...
+        s_1=e.setDate(20) // Coloca un número del (1-31).
+
+        s_2=e.setFullYear(2020,8,21) // Coloca el año (yyyy,m,dd).
+
+        s_3=e.setMonth(8) // Coloca un mes del (1-12)
+        // Y así con el resto de expresiones.
+    </script>
+</body>
+</html>
