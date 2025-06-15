@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13_Maps</title>
+</head>
+<body>
+    <script>
+        // Los Maps permiten almacenar un tipo de dato "clave-valor", qué es iterable y las claves pueden ser cualquier tipo de dato. Puedes crear un Map a partir: 
+        // Con new Map():
+        const fruits= new Map([
+            ["manzanas",500],
+            ["platanos",200],
+            ["naranjas",100],
+        ]);
+
+        // Con set(), añades uno a uno los datos:
+        fruits.set("pomelos",50);
+
+        // Con get() obtienes el valor de una clave: 
+        console.log(fruits.get("manzanas"));
+
+        // Con size obtenemos el número de elementos en map:
+        console.log(fruits.size);
+
+        // Con delete() eliminar un elemento de un map por su clave:
+        fruits.delete("pomelos");
+
+        // Con clear() eliminas todos los elementos de un map:
+        // fruits.clear();
+
+        // Con has() te devuelve un boolean si existe una clave: 
+        console.log(fruits.has("pomelos")); // False.
+
+        // El método forEach invoca una llamada a cada elemento clave/valor en un map:
+        let text = "";
+         fruits.forEach (function(value, key) {
+           text += key + ' = ' + value;
+         })        
+         
+         // El método entries() devulve un objeto iterable con los elementos [clave,valor] de un map:
+         let text_1="";
+         for (let x of fruits.entries()){
+            text_1+= x;
+         }
+
+         // El método keys() devulve un objeto iterable con las claves de un map:
+         let text_2="";
+         for (let x of fruits.keys()){
+            text_2+= x;
+         }
+
+         // El método values() devulve un objeto iterable con los valores de un map:
+         let text_3="";
+         for (let x of fruits.values()){
+            text_3+= x;
+         }
+    </script>
+    
+</body>
+</html>

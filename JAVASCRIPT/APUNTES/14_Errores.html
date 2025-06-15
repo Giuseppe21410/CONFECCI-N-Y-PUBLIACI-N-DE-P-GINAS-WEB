@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Errores en JavaScript - Apuntes</title>
+</head>
+<body>
+  <h1>Revisa la consola del navegador (F12)</h1>
+
+  <script>
+    // === APUNTES: Errores en JavaScript ===
+
+    // 1. Objeto Error
+    // -----------------
+    // El objeto Error se usa para representar errores.
+    // Tiene dos propiedades importantes: name y message.
+
+    const miError = new Error("Esto es un mensaje de error");
+    console.log(miError.name);     // "Error"
+    console.log(miError.message);  // "Esto es un mensaje de error"
+
+    // 2. try / catch / finally
+    // --------------------------
+    // try: bloque de código donde puede ocurrir un error
+    // catch: captura y maneja el error
+    // finally: (opcional) se ejecuta siempre, haya error o no
+
+    try {
+      let x = y + 1; // y no está definida → ReferenceError
+    } catch (err) {
+      console.log("Error capturado:");
+      console.log("Nombre:", err.name);    // ReferenceError
+      console.log("Mensaje:", err.message);
+    } finally {
+      console.log("Este bloque se ejecuta siempre");
+    }
+
+    // 3. Lanzar errores personalizados con throw
+    // -------------------------------------------
+    // Puedes lanzar cualquier valor: string, número, objeto, o Error
+
+    function dividir(a, b) {
+      if (b === 0) {
+        throw new Error("No se puede dividir por cero");
+      }
+      return a / b;
+    }
+
+    try {
+      console.log(dividir(10, 0));
+    } catch (err) {
+      console.log("Error personalizado:", err.message);
+    }
+
+    // 4. Tipos de errores comunes
+    // ----------------------------
+    // EvalError → obsoleto
+    // RangeError → valor fuera de rango
+    // ReferenceError → variable no definida
+    // SyntaxError → error de sintaxis (sólo ocurre en tiempo de análisis)
+    // TypeError → uso de tipo incorrecto
+    // URIError → error en funciones encode/decode URI
+
+    try {
+      let num = 1;
+      num.toPrecision(500); // → RangeError
+    } catch (err) {
+      console.log("RangeError:", err.message);
+    }
+
+    try {
+      notDefinedFunction(); // → ReferenceError
+    } catch (err) {
+      console.log("ReferenceError:", err.message);
+    }
+
+    try {
+      let obj = null;
+      obj.saludar(); // → TypeError
+    } catch (err) {
+      console.log("TypeError:", err.message);
+    }
+
+    try {
+      decodeURI("%%%"); // → URIError
+    } catch (err) {
+      console.log("URIError:", err.message);
+    }
+
+    // Nota: los SyntaxError no pueden atraparse con try/catch si están mal escritos en el código directamente.
+
+    // 5. Propiedades adicionales (no estándar en todos los navegadores)
+    // ------------------------------------------------------------------
+    // Algunos navegadores ofrecen:
+    // err.fileName, err.lineNumber, err.columnNumber, err.stack
+    // No deben usarse en sitios públicos por falta de soporte universal.
+
+    // === FIN DE APUNTES ===
+  </script>
+</body>
+</html>

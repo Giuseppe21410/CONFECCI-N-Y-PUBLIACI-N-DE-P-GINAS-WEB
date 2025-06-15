@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12_Sets</title>
+</head>
+<body>
+    <script>
+        // Un set es una colección de valores únicos donde cada valor se almacena solo una vez. Para crearlos podemos: 
+        // Con new Set() pasamos una array:
+        set= new Set(["a","b","c"]);
+
+        // Con add() podemos añdir valores. Si alguno de los valores se repite no se añaden.
+        set.add("d");
+        set.add("e")
+
+        // Se pueden recorrer a partir de un For of.
+        // Cabe resaltar que se comportan como objeto: 
+        console.log(typeof set);
+
+        // Con has() devuelve true si un valor específico existe en el set.
+        console.log(set.has("d"));
+
+        // Se puede aplicar le método forEach().
+        let text = "";
+        set.forEach (function(value) { // En este caso, no se añaden los parametros index y array.
+          text += value;
+        });
+
+        // El metodo key() devuelve un objeto iterable con los valores del set:
+        let MyValues= set.key()
+
+        let text_1="";
+        for (let x of MyValues){
+            text_1+=x;
+        }
+    </script>
+</body>
+</html>

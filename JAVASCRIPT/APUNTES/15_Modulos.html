@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Apuntes JS Módulos</title>
+</head>
+<body>
+  <h1>Apuntes: JavaScript Modules</h1>
+  <p id="output">Comprueba la consola y el párrafo inferior 👇</p>
+
+  <!-- Script tipo módulo -->
+  <script type="module">
+    // 1. ¿Qué son los módulos? 🌐
+    // Permiten dividir el código en archivos separados,
+    // facilitando mantenimiento y organización :contentReference[oaicite:1]{index=1}.
+
+    // 2. Exportaciones (export)
+
+    // 2a. Exportaciones nombradas
+    // Archivo ejemplo: person.js
+    // export const name = "Jesse";
+    // export const age = 40;
+
+    // Alternativamente:
+    // const name = "Jesse", age = 40;
+    // export {name, age};
+
+    // 2b. Exportación por defecto (solo una por archivo)
+    // Archivo ejemplo: message.js
+    // const message = () => { return "¡Hola desde módulo!"; };
+    // export default message;
+
+    // 3. Importaciones (import)
+
+    // 3a. Importar exportaciones nombradas:
+    // import { name, age } from "./person.js";
+    // console.log(`Nombre: ${name}, Edad: ${age}`);
+
+    // 3b. Importar exportación por defecto:
+    // import message from "./message.js";
+    // console.log(message());
+
+    // Para propósitos didácticos, simulamos ambos:
+    // — Exportaciones simuladas:
+    const name = "Jesse";
+    const age = 40;
+    // — Exportación por defecto simulada:
+    const message = () => `El usuario ${name} tiene ${age} años.`;
+
+    // 4. Uso real dentro del mismo archivo:
+    console.log("*** Importaciones simuladas ***");
+    console.log(`(named) Nombre: ${name}, Edad: ${age}`);
+    console.log("(default) Mensaje:", message());
+
+    // 5. Consideraciones importantes:
+    // - El script debe usar type="module".
+    // - Solo funciona cuando se sirve por HTTP/HTTPS, no con file:// :contentReference[oaicite:2]{index=2}.
+
+    // 6. Ejemplo real de uso en DOM:
+    import msg from "./message.js"   // <-- En tu entorno real, este archivo debe existir.
+
+    // Si no existe, se mostrará error 404. Aquí simulamos:
+    const output = document.getElementById("output");
+    output.textContent += "\n" + message();
+
+  </script>
+</body>
+</html>
