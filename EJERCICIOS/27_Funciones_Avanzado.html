@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones_Avanzado</title>
+</head>
+<body>
+    <script>
+ function generarContrasena(longitud, usaMinusculas, usaMayusculas, usaNumeros, usaSimbolos) {
+    const minusculas = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+    const mayusculas = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+    const simbolos   = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '=', '+'];
+    const numeros    = ['1','2','3','4','5','6','7','8','9'];
+
+    let contrasena = "";
+
+    for (let i = 0; i < longitud; i++) {
+        let prob = Math.floor(Math.random() * 100); // de 0 a 99
+
+        if (prob >= 0 && prob < 25) {
+            if (usaMinusculas) {
+                let prob_1 = Math.floor(Math.random() * minusculas.length);
+                contrasena += minusculas[prob_1];
+            } else {
+                i--;
+            }
+        } else if (prob >= 25 && prob < 50) {
+            if (usaMayusculas) {
+                let prob_2 = Math.floor(Math.random() * mayusculas.length);
+                contrasena += mayusculas[prob_2];
+            } else {
+                i--;
+            }
+        } else if (prob >= 50 && prob < 75) {
+            if (usaNumeros) {
+                let prob_3 = Math.floor(Math.random() * numeros.length);
+                contrasena += numeros[prob_3];
+            } else {
+                i--;
+            }
+        } else {
+            if (usaSimbolos) {
+                let prob_4 = Math.floor(Math.random() * simbolos.length);
+                contrasena += simbolos[prob_4];
+            } else {
+                i--;
+            }
+        }
+    }
+
+    console.log(`La contraseña generada es: ${contrasena}`);
+}
+generarContrasena(8,true,true,true,true)
+    </script>
+</body>
+</html>l

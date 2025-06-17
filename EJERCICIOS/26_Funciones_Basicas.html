@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones_Basicas</title>
+</head>
+<body>
+    <script>
+        // Función de un precio final  con iva:
+        function precioFinal(){
+            let precio= 100;
+            let precio_final=  precio - (precio * 21/100);
+            console.log(`El precio final es: ${precio_final}`);
+        }
+
+        // Función para hacer mayúscula la primera letra de una palabra:
+        function capitalizarPalabra(){
+            let palabra="hola";
+            console.log(palabra[0].toUpperCase() + palabra.slice(1,palabra.length));
+        }
+
+        // Calcular Factorial de un número: 
+        function calcularFactorial(){
+            let num= 3;
+            let num_t=1;
+            for(let i=1;i<=3;i++){
+                num_t= num_t*i;
+            }
+            console.log(`El factorial de ${num} es ${num_t}`);
+        }
+
+        // Crea una función que reciba una contraseña y devuelva true si tiene al menos 8 caracteres.
+        function validarContraseña(){
+            let contraseña="caca"
+            if (contraseña.length>8){
+                console.log("La contraseña tiene un tamaño correcto.")
+            } else{
+                console.log("Debe de ingresar al menos una contraseña de 8 caracteres.")
+            }
+        }
+        // Crea una función que reciba un número y devuelva un array con todos los números pares desde 0 hasta ese número.
+        function numPares(){
+            let num_1=10;
+            let num_pares=[];
+            for (let i=0; i<=10; i++){
+                if (i%2==0){
+                    num_pares.push(i); // Para añadir el número al array.
+                }
+            }
+        }
+    </script>
+</body>
+</html>
