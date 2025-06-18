@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>28_Reloj</title>
+    <link rel="stylesheet" href="./CSS/styles.css">
+</head>
+<body>
+    <div class="reloj">
+    <div class="esfera">
+    <div class="marca centro"></div>
+    
+    <!-- Números del reloj -->
+    <div class="numero n1">1</div>
+    <div class="numero n2">2</div>
+    <div class="numero n3">3</div>
+    <div class="numero n4">4</div>
+    <div class="numero n5">5</div>
+    <div class="numero n6">6</div>
+    <div class="numero n7">7</div>
+    <div class="numero n8">8</div>
+    <div class="numero n9">9</div>
+    <div class="numero n10">10</div>
+    <div class="numero n11">11</div>
+    <div class="numero n12">12</div>
+
+    <!-- Agujas -->
+    <div id="hora" class="aguja hora"></div>
+    <div id="minuto" class="aguja minuto"></div>
+    <div id="segundo" class="aguja segundo"></div>
+  </div>
+</div>
+<script>
+const tiempo = new Date();
+
+// === Aguja Hora ===
+let hora = tiempo.getHours();
+if (hora >= 12) hora -= 12;
+let anguloHora = (hora * 30) - 90; // 30° por hora
+
+// === Aguja Minuto ===
+let minuto = tiempo.getMinutes();
+let anguloMinuto = (minuto * 6) - 90; // 6° por minuto
+
+// === Aguja Segundo ===
+let segundo = tiempo.getSeconds();
+let anguloSegundo = (segundo * 6) - 90; // 6° por segundo
+
+// === Crear <style> con todas las animaciones ===
+const style = document.createElement("style");
+style.innerHTML = `
+  @keyframes girarHora {
+    from { transform: rotate(${anguloHora}deg); }
+    to { transform: rotate(${360 + anguloHora}deg); }
+  }
+  @keyframes girarMinutos {
+    from { transform: rotate(${anguloMinuto}deg); }
+    to { transform: rotate(${360 + anguloMinuto}deg); }
+  }
+  @keyframes girarSegundos {
+    from { transform: rotate(${anguloSegundo}deg); }
+    to { transform: rotate(${360 + anguloSegundo}deg); }
+  }
+  .animar_1 {
+    animation: girarHora 43200s linear infinite;
+  }
+  .animar_2 {
+    animation: girarMinutos 3600s linear infinite;
+  }
+  .animar_3 {
+    animation: girarSegundos 60s linear infinite;
+  }
+`;
+document.head.appendChild(style);
+
+// === Aplicar clases a las agujas ===
+document.getElementById("hora").classList.add("animar_1");
+document.getElementById("minuto").classList.add("animar_2");
+document.getElementById("segundo").classList.add("animar_3");
+</script>
+
+
+</body>
+</html>
