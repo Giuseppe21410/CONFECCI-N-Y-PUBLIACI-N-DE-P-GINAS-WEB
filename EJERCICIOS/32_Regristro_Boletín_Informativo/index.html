@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Suscripción al boletín</title>
+  <link rel="stylesheet" href="./CSS/styles.css">
+</head>
+<body>
+  <div class="contenedor">
+    <h1>Suscríbete al boletín</h1>
+
+    <form id="formulario">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Tu nombre">
+
+      <label for="email">Correo electrónico:</label>
+      <input type="email" id="email" name="email" placeholder="tu@email.com">
+
+      <button id="boton">Suscribirse</button>
+    </form>
+
+    <!-- Mensajes de validación -->
+    <p id="mensaje"></p>
+
+    <!-- Aviso emergente -->
+    <div id="aviso">
+      
+    </div>
+
+    <!-- Fecha y hora de suscripción -->
+    <div class="fecha" id="fecha">
+      <!-- Aquí debería mostrarse la fecha y hora con JS, pero como pediste sin JS, se deja el espacio -->
+    </div>
+  </div>
+  <script>
+    // Declaración de variables: 
+    const Aviso=document.getElementById("aviso");
+    const Fecha=document.getElementById("fecha");
+    const Boton=document.getElementById("boton");
+    const Nombre=document.getElementById("nombre");
+    const Correo=document.getElementById("email");
+    const Mensaje=document.getElementById("mensaje");
+    const Regexp= /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
+
+    // Definimos las funciones de la lógica de la interfaz:
+    function ValidacionInput(){
+        if (Correo.value == "" || Nombre.value == ""){
+            Aviso.textContent="";
+            Fecha.textContent="";
+            Aviso.className="";
+            Mensaje.textContent="Error: Ingresa algún valor en ambos campos."
+            return false;
+        }else if (!Regexp.test(Correo.value)){
+                Aviso.textContent="";
+                Fecha.textContent="";
+                Aviso.className="";
+                Mensaje.textContent="Error: Ingresa un correo válido." 
+                return false;
+        }else{
+            Aviso.textContent="¡Gracias por suscribirte!"
+            Aviso.className="aviso"
+            Mensaje.textContent=""
+            return true;
+        }
+    }
+
+    function MostrarHora(){
+        const FechaActual=new Date();
+        const dia= FechaActual.getDay();
+        const mes= FechaActual.getMonth();
+        const año=FechaActual.getFullYear();
+        const hora=FechaActual.getHours();
+        const minutos=FechaActual.getMinutes();
+
+        Fecha.textContent=`Fecha y hora de suscripción:${dia}/${mes}/${año} ${hora}:${minutos}`
+    }
+
+    Boton.addEventListener("click", function(event){
+        event.preventDefault();
+        ValidacionInput();
+        if (ValidacionInput()){
+            MostrarHora();
+        }
+        
+    })
+  </script>
+</body>
+</html>

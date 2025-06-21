@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Solicitud de Cita</title>
+  <link rel="stylesheet" href="./CSS/styles.css">
+</head>
+<body>
+  <main>
+    <h1>Solicitar Cita</h1>
+
+    <form id="citaForm">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required>
+
+      <label for="fecha">Fecha de la cita:</label>
+      <input type="date" id="fecha" name="fecha" required>
+
+      <button id="button">Enviar</button>
+    </form>
+
+    <p class="error" id="mensaje"></p>
+
+    <div class="tarjeta-confirmacion">
+      Tarjeta de confirmación
+    </div>
+
+    <section >
+      <h2>Cuenta atrás para la cita:</h2>
+      <p id="countdown"></p>
+    </section>
+  </main>
+
+  <script>
+    // Declaramos las variables que vamos a manejar: 
+    const Nombre = document.getElementById("nombre");
+    const Fecha = document.getElementById("fecha");
+    const Mensaje = document.getElementById("mensaje");
+    const CuentaAtras = document.getElementById("countdown");
+    const Boton = document.getElementById("button");
+
+    // Función para visualizar mensaje de validación:
+    function VisualizarMensaje() {
+        if (Nombre.value === "") {
+            Mensaje.textContent = "Error: Debe ingresar un nombre.";
+        } else if (Fecha.value === "") {
+            Mensaje.textContent = "Error: Debe seleccionar una fecha.";
+        } else if (new Date(Fecha.value) < new Date()) {
+            Mensaje.textContent = "Error: Debe ingresar una fecha posterior a la actual.";
+        } else {
+            Mensaje.textContent = `¡Cita confirmada para ${Nombre.value} el día ${Fecha.value}!`;
+        }
+    }
+
+    function VisualizarCuentaAtras(FechaObjetivo){
+        const FechaAtras= new Date();
+        const Intervalo= setInterval ( ()=> {
+            const Ahora=new Date().getTime();
+            const Destino= FechaObjetivo.getTime();
+            const Diferencia= Destino - Ahora; 
+
+            if (Diferencia <= 0){
+                CuentaAtras.textContent= "La Cita es ahora."
+                clearInterval(Intervalo); // Para el intervalo.
+                return
+            }
+
+            // Convertir diferencia en días, horas, minutos y segundos
+            const Dias = Math.floor(Diferencia / (1000 * 60 * 60 * 24));
+            const Horas = Math.floor((Diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const Minutos = Math.floor((Diferencia % (1000 * 60 * 60)) / (1000 * 60));
+            const Segundos = Math.floor((Diferencia % (1000 * 60)) / 1000);
+
+            CuentaAtras.textContent = `${Dias}d ${Horas}h ${Minutos}m ${Segundos}s`;
+        }, 1000) // Cada segundo.
+    }
+
+    // Escuchar el clic en el botón:
+    Boton.addEventListener("click", function(event) {
+        event.preventDefault(); // Evita el envío del formulario si lo hubiera.
+        VisualizarMensaje();
+         // Solo ejecutar si todo está validado correctamente
+        if (
+            Nombre.value !== "" &&
+            Fecha.value !== "" &&
+            new Date(Fecha.value) > new Date()
+        ) {
+            const FechaObjetivo = new Date(Fecha.value);
+            VisualizarCuentaAtras(FechaObjetivo);
+        }
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Comentario de Usuario</title>
+  <link rel="stylesheet" href="./CSS/styles.css">
+</head>
+<body>
+
+  <h1>Deja tu comentario</h1>
+
+  <form>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre">
+
+    <label for="comentario">Comentario:</label>
+    <textarea id="comentario" name="comentario" rows="5"></textarea>
+    <div id="contador"></div>
+
+    <button id="boton">Enviar comentario</button>
+  </form>
+
+  <p id="mensaje"></p>
+
+  <div id="comentario_final">
+  </div>
+
+ <script>
+    // Definición de variables:
+    const ComentarioFinal = document.getElementById("comentario_final");
+    const Comentario = document.getElementById("comentario");
+    const ValidacionMensaje = document.getElementById("mensaje");
+    const Nombre = document.getElementById("nombre");
+    const ContadorElemento = document.getElementById("contador");
+    const Boton = document.getElementById("boton");
+
+    // Validación del formulario:
+    function validarFormulario() {
+        if (Nombre.value.trim() === "" || Comentario.value.trim() === "") {
+            ComentarioFinal.textContent = "";
+            ComentarioFinal.className = "";
+            ValidacionMensaje.textContent = "Error: Ingrese algún valor en ambos campos.";
+        } else if (Comentario.value.length < 8) {
+            ComentarioFinal.textContent = "";
+            ComentarioFinal.className = "";
+            ValidacionMensaje.textContent = "Error: Ingrese un comentario con más de 8 caracteres.";
+        } else {
+            ValidacionMensaje.textContent = "";
+            ComentarioFinal.textContent = `El comentario subido: ${Comentario.value}`;
+            ComentarioFinal.className = "burbuja-comentario";
+        }
+    }
+
+    // Contador de caracteres:
+    function actualizarContador() {
+        const cantidadCaracteres = Comentario.value.length;
+        ContadorElemento.textContent = `${cantidadCaracteres} caracteres`;
+    }
+
+    // Eventos:
+    Comentario.addEventListener("input", actualizarContador);
+
+    Boton.addEventListener("click", function(event) {
+        event.preventDefault();
+        validarFormulario();
+    });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>30_Tabla_Dinámica</title>
+</head>
+<body>
+  <table  border="1" style="width: 400px; font-size: 20px;" id="insert"></table>
+  <br>
+  <table  border="1" style="width: 400px; font-size: 20px;" id="insert_1"></table>
+
+  <script>
+    // Se genera una tabla que va desde el comienzo hasta el número máximo de sus celdas.
+    const columnas = 3;
+    const filas = 2;
+    let cantidad = filas * columnas;
+
+    function crearTabla(columnas, filas) {
+      const tabla = document.getElementById("insert");
+
+      for (let fila = 0; fila < filas; fila++) {
+        let htmlFila = "<tr>";
+        for (let columna = 0; columna < columnas; columna++) {
+          htmlFila += `<td>${cantidad}</td>`;
+          cantidad--;
+        }
+        htmlFila += "</tr>";
+        tabla.innerHTML += htmlFila;
+      }
+    }
+
+    crearTabla(columnas, filas);
+  </script>
+  <script>
+    // Se genera una tabla donde se multiplica en cada posición fila*columna:
+    const columnas_1 = 3;
+    const filas_2 = 2;
+
+    function crearTabla_(columnas, filas) {
+      const tabla = document.getElementById("insert_1");
+
+      for (let fila = 1; fila <= filas; fila++) {
+        let htmlFila = "<tr>";
+        for (let columna = 1; columna <= columnas; columna++) {
+          cantidad=fila*columna;
+          htmlFila += `<td>${fila} * ${columna} = ${cantidad}</td>`;
+          
+        }
+        htmlFila += "</tr>";
+        tabla.innerHTML += htmlFila;
+      }
+    }
+
+    crearTabla_(columnas, filas);
+  </script>
+</body>
+</html>
