@@ -7,7 +7,7 @@
 </head>
 <body>
   <script>
-    // Definición básica de objeto: Es una colección de pares clave-valor. Se usa para representar entidades con propiedades y comportamiento.
+    // Definición básica de objeto: Es una colección de pares clave-valor. Se usa para representar entidades con propiedades y comportamiento. Todos los objetos en JavaScript heredan propiedades y métodos de un objeto prototipo.
     const persona = {
       nombre: "Juan",
       edad: 30,
@@ -15,6 +15,12 @@
         console.log("Hola, me llamo " + this.nombre);
       }
     };
+
+    // Para añadir una nueva propiedad utilizamos a un objeto: 
+    Object.defineProperties(persona,"pais",{value:"España"});
+
+    // Y para modificar el valor de una propiedad utilizamos nuevamente "defineProperties":
+    Object.defineProperties(persona,"pais",{value:"Italia"});
 
     // Acceso a propiedades
     console.log(persona.nombre); // Juan
@@ -38,10 +44,17 @@
 
     // Se crean objetos con la función constructora: 
     function Persona(nombre, edad) {
-      this.nombre = nombre;
+      this.nombre = nombre; // La palabra clave "this." hacemos referencia a la propiedad del objeto. Solo es compatible con métodos.
       this.edad = edad;
+      this.nacilonalidad= "Española"; // Dejamos una propiedad por defecto. Que a través de la función constructor no se puede crear.
     }
-      const p1 = new Persona("Ana", 25);  
+    const p1 = new Persona("Ana", 25);  
+
+    Persona.prototype.pais="España"; // Usando la propiedad "prototype" puedes añadir propiedades a la función constructor.
+
+    Persona.prototype.mensaje=function(){ // inclusive puedes añadir funciones.
+      return this.nombre + "es una persona" + this.nacilonalidad + "nacida en" + this.pais;
+     }
       
     // Se crean funciones con newObject():
     const coche = new Object();
@@ -62,6 +75,15 @@
     Object.keys(persona); // ["nombre", "edad", "saludar"] Object.keys, te devuelve las claves del objeto.
     Object.values(persona); // Los campos de las claves del objeto.
     Object.entries(persona); // Las entradas clave-valor del objeto persona.
+    const fruits = [
+      ["apples", 300],
+      ["pears", 900],
+      ["bananas", 500]
+    ];
+
+    const myObj = Object.fromEntries(fruits); // Crea un objeto desde una lista de claves/valores. 
+    Object.assign(destino, fuente)// Copia propiedades de un objeto fuente a un objeto destino.
+
   </script>
 </body>
 </html>
