@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Botón Sol y Luna</title>
+  <link rel="stylesheet" href="./CSS/styles.css">
+</head>
+<body id="Body">
+  <div class="contenedor">
+    <button id="BotonSol" class="boton sol">☀️</button>
+    <button id="BotonLuna" class="boton luna">🌙</button>
+  </div>
+
+  <script>
+  const Luna = document.getElementById("BotonLuna");
+  const Sol = document.getElementById("BotonSol");
+  const Cuerpo = document.getElementById("Body");
+
+  function aplicarTema(tema) {
+    if (tema === "claro") {
+      Luna.style.display = "none";
+      Sol.style.display = "block";
+      Cuerpo.style.backgroundColor = "white";
+      localStorage.setItem("tema", "claro");
+    } else {
+      Luna.style.display = "block";
+      Sol.style.display = "none";
+      Cuerpo.style.backgroundColor = "#121212";
+      localStorage.setItem("tema", "oscuro");
+    }
+  }
+
+  Luna.addEventListener("click", () => aplicarTema("claro"));
+  Sol.addEventListener("click", () => aplicarTema("oscuro"));
+
+  // Restaurar tema al cargar la página
+  window.addEventListener("DOMContentLoaded", () => {
+    const temaGuardado = localStorage.getItem("tema"); // predeterminado
+    aplicarTema(temaGuardado);
+  });
+</script>
+
+</body>
+</html>

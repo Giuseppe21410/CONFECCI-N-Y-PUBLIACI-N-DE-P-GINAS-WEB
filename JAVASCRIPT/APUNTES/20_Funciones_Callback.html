@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20_Funciones_Llamar_de_Vuelta</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        // Una función "Callback" es  una función pasa como argumento a otra función. Esta función se puede ejecutar después de que otra función haya terminado. 
+
+        // Veamos un ejemplo: 
+
+        function miRepresentación(resultado){
+            document.getElementById("demo").textContent= resultado;
+        }
+
+        function miCalculadora(num1,num2,Callback){
+            let sumar= num1+num2;
+            Callback(sumar);
+        }
+
+        miCalculadora(10,10, miRepresentación); // Se está pasando como argumento a "miRepresentación" con el parametro "sumar".
+
+        // Recuerda no usar parentesis cuando pasas una función como argumento.
+    </script>
+</body>
+</html>

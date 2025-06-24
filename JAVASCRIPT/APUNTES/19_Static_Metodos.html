@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>19_Métodos_Estáticos</title>
+</head>
+<body>
+
+    <p id="demo"></p>
+    
+    <script>
+        // Los métodos estáticos, solo pueden ser definidas por la clase misma. Es decir, no puedes llamar a un método estatico desde un objeto, solo desde el objeto clase.
+
+        class Coche{
+            constructor (nombre){
+                this.name=nombre;
+            }
+            static Mensaje(x){
+                return "La marca de mi coche es" + x.name;
+            }
+            static  Saludo(){
+                return "Holaa!!!";
+            }
+        }
+
+        const myCoche= new  Coche("Opel");
+
+        // Solo puedes llamar a "Saludo()" desde el objeto de la clase: 
+        document.getElementById("demo").textContent= Coche.Saludo();
+
+        // Pero no al objeto de la clase: 
+        // document.getElementById("demo").textContent= myCoche.Saludo();
+
+        // Pero puedes pasar el objeto como si fuese un parametro:
+        document.getElementById("demo").textContent=Coche.Mensaje(myCoche);
+
+        
+        
+    </script>
+    
+</body>
+</html>

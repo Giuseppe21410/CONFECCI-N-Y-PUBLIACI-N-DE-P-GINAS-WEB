@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Drag and Drop Personalizado</title>
+  <link rel="stylesheet" href="./CSS/styles.css">
+</head>
+<body>
+
+  <!-- Contenedor donde se moverá la caja -->
+  <div class="contenedor" id="contenedor">
+    <!-- Caja arrastrable -->
+    <div class="caja" id="caja">Arrástrame</div>
+  </div>
+
+  <script>
+    // Obtener elementos
+    const caja = document.getElementById('caja');
+    const contenedor = document.getElementById('contenedor');
+
+    let offsetX = 0;  // diferencia entre el clic y el borde izquierdo de la caja
+    let offsetY = 0;  // diferencia entre el clic y el borde superior de la caja
+    let arrastrando = false;
+
+    // Al hacer clic (mousedown) sobre la caja
+    caja.addEventListener('mousedown', function(e) { // El evento "mousedown" sucede cuando presiona el mouse.
+      arrastrando = true; 
+
+      // Calcular la diferencia entre el clic y el borde del elemento
+      offsetX = e.clientX - caja.offsetLeft; // e.ClientX Posición horizontal del mouse al clickar en el eje X y "caja.offsetLeft" La cordenada cordenada superior izquierda de la caja con respecto a la cordenada superior izquierda del contenedor en términos de X
+      offsetY = e.clientY - caja.offsetTop; // Lo mismo de arriba pero para el eje Y.
+
+      caja.style.cursor = "grabbing"; // Cambia el estilo del cursor.
+    });
+
+    // Al mover el mouse
+    document.addEventListener('mousemove', function(e) { // El evento mousemove cuando el mouse se desplaza presionado.
+      if (arrastrando) {
+        // Calcular nueva posición:
+        const contRect = contenedor.getBoundingClientRect(); // Devuelve un objeto con las coordenadas y dimensiones del contenedor padre en pantalla, en relación al viewport (pantalla del navegador). { left:100px; right:150px;...}
+
+        // Limitar dentro del contenedor (opcional)
+        let nuevaX = e.clientX - contRect.left - offsetX; // "offsetX" es la diferencia entre donde hiciste clic dentro de la caja y su borde izquierdo.
+        let nuevaY = e.clientY - contRect.top - offsetY;
+
+        // Limita que no salga del contenedor
+        nuevaX = Math.max(0, Math.min(nuevaX, contenedor.clientWidth - caja.offsetWidth));
+        nuevaY = Math.max(0, Math.min(nuevaY, contenedor.clientHeight - caja.offsetHeight));
+
+        // Se desplaza la caja en función de las variables anteriores.
+        caja.style.left = nuevaX + 'px';
+        caja.style.top = nuevaY + 'px';
+      }
+    });
+
+    // Al soltar el clic
+    document.addEventListener('mouseup', function() { // El evento "mouseup" cuando el mouse se deja de presionar.
+      arrastrando = false;
+      caja.style.cursor = "grab";
+    });
+  </script>
+</body>
+</html>

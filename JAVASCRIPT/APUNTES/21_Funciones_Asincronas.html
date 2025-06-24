@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>21_Funciones_Asincronas</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script> 
+        // Funciones que corren en paralelo con otras funciones se llaman asincronas. Se emplean "Callbacks" para las funciones asincronas "setTimeout()" y "setInterval()":
+
+        // Con "setTimeout()", el navegador espera una cantidad de milisegundos y después ejecuta la función que pasas como argumento: 
+
+        setTimeout(miFunción, 3000); // Cuando pasen 3000 milisengundos se ejecutará "miFunción()"
+        function miFunción(){
+            document.getElementById("demo").textContent="Te Amo!!";
+        }
+
+        // En vez de pasar el nombre de la función, puedes pasar toda la función por defecto:
+        setTimeout(function() { myFunction("I love You !!!"); }, 3000);
+        function myFunction(value) {
+          document.getElementById("demo").innerHTML = value;
+        }   
+
+        // Con "setInterval()", la función "Callback" se ejecuta de forma períodica. Contempla el ejemplo del siguiente Reloj:
+        setInterval(myFunction, 1000); // Cada segunda se ejecuta "myFunction" y se modifica los valores del reloj.
+
+        function myFunction() {
+         let d = new Date();
+         document.getElementById("demo").innerHTML=
+         d.getHours() + ":" +
+         d.getMinutes() + ":" +
+         d.getSeconds();
+        }         
+    </script>
+</body>
+</html>ml

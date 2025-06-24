@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cronómetro Estático</title>
+  <link rel="stylesheet" href="./CSS/styles.css">
+</head>
+<body>
+  <div class="cronometro-container">
+    <h1>Cronómetro</h1>
+    <div class="pantalla-tiempo">
+      <p id="Horas">00</p>
+      <p>:</p>
+      <p id="Minutos">00</p>
+      <p>:</p>
+      <p id="Segundos">00</p>
+    </div>
+    <div class="botones">
+      <button id="Iniciar">Iniciar</button>
+      <button id="Pausar">Pausar</button>
+      <button id="Reiniciar">Reiniciar</button>
+    </div>
+
+    <script> 
+
+let segundos = 0;
+let minutos = 0;
+let horas = 0;
+let intervalo = null;
+
+const seg = document.getElementById("Segundos");
+const min = document.getElementById("Minutos");
+const hr = document.getElementById("Horas");
+
+const botonIniciar = document.getElementById("Iniciar");
+const botonPausar = document.getElementById("Pausar");
+const botonReiniciar = document.getElementById("Reiniciar");
+
+function actualizarPantalla() {
+  seg.textContent = segundos < 10 ? "0" + segundos : segundos;
+  min.textContent = minutos < 10 ? "0" + minutos : minutos;
+  hr.textContent = horas < 10 ? "0" + horas : horas;
+}
+
+function iniciarCronometro() {
+  if (intervalo) return; // evita múltiples intervalos
+
+  intervalo = setInterval(() => {
+    segundos++;
+    if (segundos === 60) {
+      segundos = 0;
+      minutos++;
+    }
+    if (minutos === 60) {
+      minutos = 0;
+      horas++;
+    }
+    actualizarPantalla();
+  }, 1000);
+}
+
+function pausarCronometro() {
+  clearInterval(intervalo);
+  intervalo = null;
+}
+
+function reiniciarCronometro() {
+  pausarCronometro();
+  segundos = 0;
+  minutos = 0;
+  horas = 0;
+  actualizarPantalla();
+}
+
+botonIniciar.addEventListener("click", iniciarCronometro);
+botonPausar.addEventListener("click", pausarCronometro);
+botonReiniciar.addEventListener("click", reiniciarCronometro);
+
+
+    </script>
+  </div>
+</body>
+</html>

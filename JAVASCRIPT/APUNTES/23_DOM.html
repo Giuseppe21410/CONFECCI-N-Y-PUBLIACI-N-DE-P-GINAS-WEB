@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body onload="checkCookies()"> <!--Cuando carge la página se ejecuta la función.-->
+    <div id="main"><p class="demo" id="demo"></p></div>
+    <img src="" alt="" id="img">
+    <button id="boton" onclick="displayDate()"></button> <!--El evento puede definirse desde el mismo HTML-->
+    <input type="text" id="fname" oninput="upperCase()">
+    <script>
+        // Con JavaScript podemos modificar un documento HTML. Existen diferentes maneras como cambiar el contenido de elementos, estilos, reaccionar eventos, añadir y eliminar elementos.
+
+        // ¿Cómo encontrar elementos en un documento? //
+        // Una forma común de acceder a un elemento es con "getElementbyId("")", con "getElementsByClassName("")" por su clase, con "getElementsByTagName("")" por su etiqueta (Por ejemplo, todos los parrafos dentro de un contenedor.) y "querySelectorAll()" encuentra todos los elemetos que coinciden con un selector CSS específico:
+        const parrafo=document.getElementById("demo");
+
+        const parrafosame=document.getElementsByClassName("demo");
+
+        const main=document.getElementsById("main");
+        const parrafoSame_1=main.getElementsByTagName("p"); // Identifica a todos los parráfos dentro del contenedor "id='main'".
+
+        const parrafoSame_2=document.querySelectorAll("p.demo"); // Todos los parrafos con la clase "demo".
+
+        // ¿Cómo insertamos contenido? //
+        // Con la propiedad "innerHTML" podemos obtener o cambiar el contenido de un elemento, con "TextContent" cambiar el contenido de texto de un documento y con "document.getElementById("").attribute= new value" cambias el valor de un atributo: 
+        parrafo.innerHTML="Holaa!!!";
+
+        const imagen=document.getElementById("img");
+        imagen.src="landscape.jpg"; // Cambias el atributo "src".
+
+        //¿Cómo modificamos el estilo CSS de un elemento? //
+        // Con "document.getElementById(id).style.property = new style", puedes modificar el estilo de un elemento específico.
+        parrafo.style.color="Blue";
+
+        // Con ".classList" puedes añadir, quitar o alternar clases CSS ya definidas.
+        parrafo.classList.add("activo");         // añade una clase
+        parrafo.classList.remove("oculto");      // quita una clase
+        parrafo.classList.toggle("modoOscuro");  // la pone o la quita
+        parrafo.classList.contains("importante"); // devuelve true o false
+
+        // ¿Cómo un elmento puede reaccionar a eventos? 
+        // Desde el mismo HTML puedes crear funciones en JS, que cuando sueceda un evento (Carge la página, clickes un botón, envies formulario...) se ejecute la función.
+        // Con el atributo ".onclick", sucede un evento al clickar: 
+        document.getElementById("boton").onclick= displayDate;
+
+        // Con el atributo ".onload", sucede el evento cuando el usuario carga la página y ".onunload" cuando el usuario sale.
+
+        // Con el ".oninput" se ejecuta una acción con se envian datos por un formulario.
+
+        // Con ".onchange" cuando cambia el contenido de un campo de un input.
+    </script>
+</body>
+</html>

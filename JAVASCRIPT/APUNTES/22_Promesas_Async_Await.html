@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Apuntes Promesas y Async/Await - JavaScript</title>
+</head>
+<body>
+  <h1>Consulta la consola del navegador (F12) para ver los ejemplos</h1>
+
+  <script>
+    // ============================
+    // PROMESAS (Promises) en JS
+    // ============================
+
+    /*
+     * Una Promesa (Promise) es un objeto que representa una operación asincrónica.
+     * Puede estar en uno de tres estados:
+     * - Pendiente (pending)
+     * - Cumplida (fulfilled)
+     * - Rechazada (rejected)
+     */
+
+    // Ejemplo de creación de una promesa
+    const miPromesa = new Promise((resolve, reject) => {
+      const exito = true;
+
+      if (exito) {
+        resolve("✅ Operación exitosa");
+      } else {
+        reject("❌ Ocurrió un error");
+      }
+    });
+
+    // Consumo de una promesa usando then/catch
+    miPromesa
+      .then((resultado) => {
+        console.log("Promesa resuelta:", resultado);
+      })
+      .catch((error) => {
+        console.error("Promesa rechazada:", error);
+      });
+
+    // ============================
+    // ASYNC / AWAIT
+    // ============================
+
+    /*
+     * async/await es una forma más legible y estructurada de trabajar con código asincrónico.
+     * - async convierte una función en una que siempre retorna una promesa.
+     * - await pausa la ejecución de la función async hasta que la promesa se resuelva o rechace.
+     */
+
+    function esperar(ms) {
+      // Esta función retorna una promesa que se resuelve después de ms milisegundos
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve(`Esperado ${ms} ms`);
+        }, ms);
+      });
+    }
+
+    // Función con async/await
+    async function ejemploAsyncAwait() {
+      try {
+        console.log("⏳ Esperando 1 segundo...");
+        const resultado = await esperar(1000);
+        console.log("Resultado:", resultado);
+
+        console.log("⏳ Esperando medio segundo más...");
+        const resultado2 = await esperar(500);
+        console.log("Resultado:", resultado2);
+      } catch (error) {
+        console.error("Error atrapado:", error);
+      }
+    }
+
+    // Llamamos a la función
+    ejemploAsyncAwait();
+
+    // ============================
+    // DIFERENCIA CLAVE
+    // ============================
+
+    /*
+     * Promesas usan .then() y .catch(), lo cual puede ser menos claro en cadenas largas.
+     * async/await usa código similar al síncrono, más fácil de leer y depurar.
+     */
+
+    // Ejemplo equivalente usando Promesas puras
+    esperar(1500)
+      .then((res) => {
+        console.log("Con Promesas:", res);
+        return esperar(500);
+      })
+      .then((res2) => {
+        console.log("Con Promesas:", res2);
+      })
+      .catch((e) => {
+        console.error("Error en Promesas:", e);
+      });
+
+  </script>
+</body>
+</html>

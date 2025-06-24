@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17_Clases</title>
+</head>
+<body>
+    <p id="mensaje"></p>
+    <script>
+        // A la hora de crear clases, siempre debes añadir un método constructor() para inicializar las propiedades de un objeto:
+        class Coche{
+            constructor(nombre,año){
+                this.nombre=nombre;
+                this.año=año;
+            }
+            // Podemos añadir métodos (Funciones) a los objetos:
+            edad(){
+                const fecha=new Date();
+                return fecha.getFullYear() - this.año;
+            }
+        }
+
+        // Para crear objetos a partir de una clase usamos la palabra clave "new" y pasamos las variables del método constructor: 
+        const Coche_1 = new Coche("OpelAstra",1997);
+        document.getElementById("mensaje").textContent="Mi coche tiene"+ Coche_1.edad() + "años." // Accedemos a un método con "nombreObjeto.Método()"
+    </script>
+</body>
+</html>
