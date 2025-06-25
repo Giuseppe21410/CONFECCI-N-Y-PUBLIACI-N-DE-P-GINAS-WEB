@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lista de Tareas</title>
+<link rel="stylesheet" href="./CSS/styles.css">
+</head>
+<body>
+
+<h1>Lista de Tareas</h1>
+
+<form>
+  <input id="Nombre" type="text" placeholder="Nueva tarea" name="tarea" />
+  <button id="Añadir" type="submit" class="add-btn" title="Añadir tarea">+</button>
+</form>
+
+<ul id="TablaTareas" class="task-list">
+</ul>
+
+<script>
+    const BotonAñadir = document.getElementById("Añadir");
+    const TituloTarea = document.getElementById("Nombre");
+    const TablaTareas = document.getElementById("TablaTareas");
+
+    function cargarLista() {
+        const elementosLista = JSON.parse(localStorage.getItem("tareas")) || [];
+        TablaTareas.innerHTML = ""; // Limpiar lista antes de renderizar
+
+        elementosLista.forEach((elemento, index) => {
+            const li = document.createElement("li");
+
+            li.innerHTML = `
+                <input onclick="completarElemento(${index})" type="checkbox" ${elemento.completada ? 'checked' : ''}>
+                <label id="completado-${index}" ${elemento.completada ? 'style=text-decoration:line-through' : ''}>${elemento.nombre}  </label>
+                <button class="delete-btn" onclick="eliminarElemento(${index})" data-index="${index}" aria-label="Eliminar tarea">&#128465;</button>
+            `;
+
+            TablaTareas.appendChild(li);
+        });
+    }
+
+    function añadirElemento() {
+        const texto = TituloTarea.value.trim();
+        if (texto === "") return;
+
+        const elementosLista = JSON.parse(localStorage.getItem("tareas")) || [];
+        const nuevaTarea = {
+            nombre: texto,
+            completada: false
+        };
+
+        elementosLista.push(nuevaTarea);
+        localStorage.setItem("tareas", JSON.stringify(elementosLista));
+        TituloTarea.value = "";
+        cargarLista();
+    }
+
+    function eliminarElemento(indice){
+      let tareas = JSON.parse(localStorage.getItem("tareas")) || [];
+      tareas.splice(indice, 1); // elimina una tarea en ese índice
+      localStorage.setItem("tareas", JSON.stringify(tareas));
+      cargarLista();    
+      
+    }
+
+    function completarElemento(indice){
+    let tareas = JSON.parse(localStorage.getItem("tareas")) || [];
+    tareas[indice].completada = true;
+    localStorage.setItem("tareas", JSON.stringify(tareas));
+    cargarLista();
+    }
+
+
+    BotonAñadir.addEventListener("click", function(e){
+      e.preventDefault();
+      añadirElemento();
+    });
+
+    // Al cargar la página
+    cargarLista();
+</script>
+</body>
+</html>

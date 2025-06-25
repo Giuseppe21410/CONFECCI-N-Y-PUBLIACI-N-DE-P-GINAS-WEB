@@ -51,6 +51,36 @@
         // Con el ".oninput" se ejecuta una acción con se envian datos por un formulario.
 
         // Con ".onchange" cuando cambia el contenido de un campo de un input.
+
+        // ¿Cómo una página puede detectar un evento? //
+        // A partir del el método "addEventListener()" un elemento puede detectar un evento (clickar,pasar el mouse por encima...) y posteriormente ejecutar una función.
+
+        // Damos un ejemplo al clickar sobre un botón:
+        document.getElementById("boton").addEventListener("click",myFunction); 
+
+        function myFunction(){
+            alert ("Hola Mundo!!!"); 
+        }
+
+        // O podmemos pasar toda la función como argumento y de forma anónima: 
+        document.getElementById("boton").addEventListener("click", function(){alert("Hola Mundo!!!")})
+
+        // Podemos eliminar un "addEventListener()" con "removeEventListener()": 
+        document.getElementById("boton").removeEventListener("click",myFunction);
+
+        // Otros eventos son "mousedown", "mouseup", "keydown", "mousemove", "mouseover", "mouseout"...
+
+        // Existen dos formas de propagación "bubbling y capturing". La propagación en un evento define el orden cuando ese evento ocurre. Supon que tienes un contendor "<div>" y dentro de ese contenedor un párrafo "<p>" ¿Cuándo clickas cual evento sucederá primero?:
+           // Con "bubbling" elevento se propaga de dentro hacia a fuera, es decir, primero el párrafo y posteriormente el contenedor.
+           // Con "capturing" de afuera hacia dentro.
+        // Para definir la captura: 
+        let event= addEventListener("click", myFunction, true) // Se propaga con "capturing".
+        event =addEventListener("click", myFunction, false) // Se propaga con "bubbling". Este modo es por defecto.
+
+        //Para evitar la propagación de eventos: 
+        event.stopPropagation()
+        event.preventDefault(); // Previene la acción por defecto.
+        
     </script>
 </body>
 </html>
