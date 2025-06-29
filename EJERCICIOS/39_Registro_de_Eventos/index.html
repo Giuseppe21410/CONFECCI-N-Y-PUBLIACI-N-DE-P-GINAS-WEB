@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registro de Usuario</title>
+  <link rel="stylesheet" href="./CSS/styles.css" />
+</head>
+<body>
+  <div class="form-container">
+    <h1>Registro de Eventos</h1>
+    <form novalidate>
+      <div class="form-group">
+        <label for="nombre">Nombre completo</label>
+        <input type="text" id="nombre" name="nombre" required />
+        <label class="Aviso" id="Aviso_1"></label>
+      </div>
+
+      <div class="form-group">
+        <label for="dni">DNI</label>
+        <input type="text" id="dni" name="dni" required />
+        <label class="Aviso" id="Aviso_2"></label>
+      </div>
+
+      <div class="form-group">
+        <label for="fecha">Fecha de nacimiento</label>
+        <input type="date" id="fecha" name="fecha" required />
+        <label class="Aviso" id="Aviso_3"></label>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" name="email" required />
+        <label class="Aviso" id="Aviso_4"></label>
+      </div>
+
+      <div class="form-group">
+        <label for="categoria">Categoría</label>
+        <select id="categoria" name="categoria" required>
+          <option value="">Seleccione una opción</option>
+          <option value="infantil">Infantil</option>
+          <option value="adulto">Adulto</option>
+          <option value="senior">Senior</option>
+        </select>
+        <label class="Aviso" id="Aviso_5"></label>
+      </div>
+
+      <div class="checkbox">
+        <input class="check" type="checkbox" id="condiciones" name="condiciones" required />
+        <label for="condiciones">Acepto los términos y condiciones</label>
+      </div>
+      <div class="end"><label class="Aviso_6" id="Aviso_6"></label></div>
+      
+
+
+      <button type="submit">Enviar</button>
+      <label class="AvisoCorrecto" id="Aviso_7"></label>
+    </form>
+  </div>
+
+  <script>
+    // Definimos las variables:
+    let Nombre = document.getElementById("nombre");
+    let Dni = document.getElementById("dni");
+    let Fecha = document.getElementById("fecha");
+    let Correo = document.getElementById("email");
+    let Categoria = document.getElementById("categoria");
+    let Condiciones = document.getElementById("condiciones");
+    let Aviso_1 = document.getElementById("Aviso_1");
+    let Aviso_2 = document.getElementById("Aviso_2");
+    let Aviso_3 = document.getElementById("Aviso_3");
+    let Aviso_4 = document.getElementById("Aviso_4");
+    let Aviso_5 = document.getElementById("Aviso_5");
+    let Aviso_6 = document.getElementById("Aviso_6");
+    let boton = document.querySelector("button[type='submit']");
+    let Aviso_7 = document.getElementById("Aviso_7");
+
+    //Validación del formulario al enviar:
+    boton.addEventListener("click", function(event){
+        event.preventDefault(); // Evita el envío del formulario por defecto
+
+        validarNombre();
+        validarDni();
+        validarFecha();
+        validarCorreo();
+        validarCategoria();
+
+        if (Nombre.style.borderColor === "green" &&
+            Dni.style.borderColor === "green" &&
+            Fecha.style.borderColor === "green" &&
+            Correo.style.borderColor === "green" &&
+            Categoria.style.borderColor === "green" &&
+            Condiciones.checked) {
+            Aviso_7.textContent = "Formulario enviado correctamente.";
+        } else {
+            Aviso_7.textContent = "Por favor, corrige los errores antes de enviar.";
+            Aviso_7.style.color = "red";
+        }
+    });
+
+    // Función para validar el nombre:
+    // Función para validar el Nombre:
+    function validarNombre(){
+        let regex = /^[A-Za-z]+$/;
+        Aviso_1.textContent="";
+        if (Nombre.value.trim() === ""){
+            Aviso_1.textContent = "El nombre es obligaorio.";
+            Nombre.style.borderColor= "red";
+        }else if (regex.test(Nombre.value)
+ === false){
+            Aviso_1.textContent = "El nombre solo puede contener letraas.";
+            Nombre.style.borderColor= "red";
+        }else{
+            Nombre.style.borderColor="green";
+        }
+    }
+
+    validarNombre();
+
+    Nombre.addEventListener("input", validarNombre);
+
+    // Función para validar el Correo:
+    function validarCorreo(){
+        let regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        Aviso_4.textContent="";
+        if (Correo.value.trim() === ""){
+            Aviso_4.textContent = "El correo es obligatorio.";
+            Correo.style.borderColor= "red";
+        }else if (regex.test(Correo.value) === false){
+            Aviso_4.textContent = "El correo no es válido.";
+            Correo.style.borderColor= "red";
+        }else{
+            Correo.style.borderColor="green";
+        }
+    }
+
+    validarCorreo();
+
+    Correo.addEventListener("input", validarCorreo);
+
+    // Función para validar el DNI:
+    function validarDni(){
+        let regex = /^[0-9]{8}[A-Za-z]$/;
+        Aviso_2.textContent="";
+        if (Dni.value.trim() === ""){
+            Aviso_2.textContent = "El DNI es obligatorio.";
+            Dni.style.borderColor= "red";
+        }else if (regex.test(Dni.value) === false){
+            Aviso_2.textContent = "El DNI no es válido.";
+            Dni.style.borderColor= "red";
+        }else{
+            Dni.style.borderColor="green";
+        }
+    }
+
+    validarDni();
+    Dni.addEventListener("input", validarDni);
+
+    // Función para validar la Fecha:
+    function validarFecha(){
+        Aviso_3.textContent="";
+        if (Fecha.value.trim() === ""){
+            Aviso_3.textContent = "La fecha es obligatoria.";
+            Fecha.style.borderColor= "red";
+        }else if (new Date(Fecha.value) > new Date()){
+            Aviso_3.textContent = "La fecha no puede ser futura.";
+            Fecha.style.borderColor= "red";
+        }else if (new Date(Fecha.value) > new Date("2013-01-01")){
+            Aviso_3.textContent = "Al menos debe tener 12 años.";
+            Fecha.style.borderColor= "red";
+        }
+        else{
+            Fecha.style.borderColor="green";
+        }
+    }
+    validarFecha();
+    Fecha.addEventListener("input", validarFecha);
+
+    // Función para validar la categoría:
+    function validarCategoria(){
+        Aviso_5.textContent="";
+        if (Categoria.value === ""){
+            Aviso_5.textContent = "La categoría es obligatoria.";
+            Categoria.style.borderColor= "red";
+        }else{
+            Categoria.style.borderColor="green";
+        }
+    }
+    validarCategoria();
+    Categoria.addEventListener("change", validarCategoria);
+
+    // Función para validar las condiciones:
+    Condiciones.addEventListener("change", function() {
+        Aviso_6.textContent = "";
+        if (!Condiciones.checked) {
+            Aviso_6.textContent = "Debe aceptar los términos.";
+            Aviso_6.style.color = "red";
+        } else {
+            Aviso_6.style.color = "green";
+        }
+    });
+
+  </script>
+</body>
+</html>

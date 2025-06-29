@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulario de Contacto Profesional</title>
+  <link rel="stylesheet" href="./CSS/styles.css" />
+</head>
+<body>
+  <div class="form-container">
+    <h1>Contáctanos</h1>
+    <form  method="post" novalidate> <!-- Se añade el atributo novalidate para evitar la validación automática del navegador -->
+      <div class="form-group">
+        <label class="label" for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre"  />
+        <label class="Aviso" id="Aviso_1"></label>
+      </div>
+
+      <div class="form-group">
+        <label class="label" for="correo">Correo electrónico</label>
+        <input type="email" id="correo" name="correo"/>
+        <label class="Aviso" id="Aviso_2"></label>
+      </div>
+
+      <div class="form-group">
+        <label class="label" for="telefono">Teléfono</label>
+        <input type="tel" id="telefono" name="telefono" />
+        <label class="Aviso" id="Aviso_3"></label>
+      </div>
+
+      <div class="form-group">
+        <label class="label" for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" rows="5"></textarea>
+        <label class="Aviso" id="Aviso_4"></label>
+      </div>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+
+  <script>
+    // Definición de las varibales de los campos del formulario:
+    let Aviso_1 = document.getElementById("Aviso_1");
+    let Aviso_2 = document.getElementById("Aviso_2");   
+    let Aviso_3 = document.getElementById("Aviso_3");
+    let Aviso_4 = document.getElementById("Aviso_4");
+    let Nombre = document.getElementById("nombre");
+    let Correo = document.getElementById("correo");
+    let Telefono = document.getElementById("telefono");
+    let Mensaje = document.getElementById("mensaje");
+
+    // Función para validar el Nombre:
+    function validarNombre(){
+        let regex = /^[A-Za-z]+$/;
+        Aviso_1.textContent="";
+        if (Nombre.value.trim() === ""){
+            Aviso_1.textContent = "El nombre es obligaorio.";
+            Nombre.style.borderColor= "red";
+        }else if (regex.test(Nombre.value)
+ === false){
+            Aviso_1.textContent = "El nombre solo puede contener letraas.";
+            Nombre.style.borderColor= "red";
+        }else{
+            Nombre.style.borderColor="green";
+        }
+    }
+
+    validarNombre();
+
+    Nombre.addEventListener("input", validarNombre);
+
+    // Función para validar el Correo:
+    function validarCorreo(){
+        let regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        Aviso_2.textContent="";
+        if (Correo.value.trim() === ""){
+            Aviso_2.textContent = "El correo es obligatorio.";
+            Correo.style.borderColor= "red";
+        }else if (regex.test(Correo.value) === false){
+            Aviso_2.textContent = "El correo no es válido.";
+            Correo.style.borderColor= "red";
+        }else{
+            Correo.style.borderColor="green";
+        }
+    }
+
+    validarCorreo();
+
+    Correo.addEventListener("input", validarCorreo);
+
+    // Función para validar el Teléfono:
+    function validarTelefono(e){
+        let regex = /^\d{9}$/;
+        Aviso_3.textContent="";
+        if (regex.test(Telefono.value) === false){
+            Aviso_3.textContent = "El teléfono debe tener 9 dígitos.";
+            Telefono.style.borderColor= "red";
+        }else{
+            Telefono.style.borderColor="green";
+        }
+    }
+
+    function eliminarAvisoTelefono(e){
+        e.preventDefault();
+        e.stopPropagation();
+        Aviso_3.textContent="";
+        Telefono.style.borderColor="";
+    }
+
+    Telefono.addEventListener("focus", validarTelefono);
+    Telefono.addEventListener("input", validarTelefono);
+    Telefono.addEventListener("blur", eliminarAvisoTelefono);
+
+    // Función para validar el Mensaje:
+    function validarMensaje(){
+        Aviso_4.textContent="";
+        if (Mensaje.value.trim() === ""){
+            Aviso_4.textContent = "El mensaje es obligatorio.";
+            Mensaje.style.borderColor= "red";
+        }else if (Mensaje.value.length < 20){
+            Aviso_4.textContent = "El mensaje debe tener al menos 10 caracteres.";
+            Mensaje.style.borderColor= "red";
+        }else{
+            Mensaje.style.borderColor="green";
+        }
+    }
+    validarMensaje();
+    Mensaje.addEventListener("input", validarMensaje);
+  </script>
+</body>
+</html>
