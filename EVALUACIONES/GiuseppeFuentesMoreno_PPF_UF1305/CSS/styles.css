@@ -1,0 +1,248 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+    padding: 20px;
+    max-width: 500px;
+    margin: auto;
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    align-items: center;
+
+  }
+
+  input[type="time"] {
+    padding: 8px 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-left: 60px;
+  }
+
+  button.add-btn {
+    background-color: #28a745;
+    border: none;
+    color: white;
+    font-size: 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+  
+  }
+
+  ul.task-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  ul.task-list li {
+    background: white;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  }
+
+  ul.task-list li.completed label {
+    text-decoration: line-through;
+    color: #888;
+  }
+
+  ul.task-list li input[type="checkbox"] {
+    margin-right: 12px;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+  }
+
+  ul.task-list li label {
+    flex: 1;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  button.delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #c00;
+    padding: 5px;
+    line-height: 1;
+  }
+
+  button.delete-btn:hover {
+    color: #900;
+  }
+
+.contenedor {
+  max-width: 500px;
+  margin: auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+  display: block;
+  margin-top: 10px;
+}
+
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+
+
+/* Añadimos los estilos del Reloj */ 
+.reloj {
+  width: 300px;
+  height: 300px;
+  border: 10px solid #333;
+  border-radius: 50%;
+  position: relative;
+  margin: 50px auto;
+  background: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.esfera {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.marca.centro {
+  width: 12px;
+  height: 12px;
+  background: #333;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+/* Agujas */
+.aguja {
+  position: absolute;
+  width: 50%;
+  height: 2px;
+  background: #333;
+  top: 50%;
+  left: 50%;
+  transform-origin: left;
+  transform: rotate(360deg);
+  transition: transform 0.05s linear;
+}
+
+.hora {
+  height: 4px;
+  width: 25%;
+  background: #000;
+
+}
+
+.minuto {
+  height: 3px;
+  width: 40%;
+  background: #555;
+  animation: girarMinuto 3600s linear infinite;
+}
+
+.segundo {
+  height: 2px;
+  width: 45%;
+  background: red;
+  animation: girarSegundo 60s linear infinite;
+}
+
+/* Animaciones */
+
+@keyframes girarMinuto {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes girarSegundo {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Números */
+.numero {
+  position: absolute;
+  font-size: 18px;
+  font-weight: bold;
+  color: #222;
+  transform: translate(-50%, -50%);
+}
+
+.n1  { top: 20%;  left: 75%; }
+.n2  { top: 32%;  left: 85%; }
+.n3  { top: 50%;  left: 90%; }
+.n4  { top: 68%;  left: 85%; }
+.n5  { top: 80%;  left: 75%; }
+.n6  { top: 88%;  left: 50%; }
+.n7  { top: 80%;  left: 25%; }
+.n8  { top: 68%;  left: 15%; }
+.n9  { top: 50%;  left: 10%; }
+.n10 { top: 32%;  left: 15%; }
+.n11 { top: 20%;  left: 25%; }
+.n12 { top: 12%;  left: 50%; }
+.nTotal { top: 75%;  left: 50%;}
+
+.Aviso{
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  top: 50%;
+  height: 50%;
+  transform:translate(0%,-50%);
+  border-radius: 20px;
+  background-color: #fff;
+  z-index: 100000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.AvisoP{
+  color: red;
+  font-size: 40px;
+  font-weight: bolder;
+}
+
+.Aviso button{
+  border: none;
+  padding: 15px;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.AvisoH{
+  font-size: 30px;
+  font-weight: bold;
+}

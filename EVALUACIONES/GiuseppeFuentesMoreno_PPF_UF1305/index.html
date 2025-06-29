@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lista de Tareas</title>
+<link rel="stylesheet" href="./CSS/styles.css">
+</head>
+<body>
+
+<!-- Contenedor principal para el reloj analógico -->
+    <div class="reloj">
+      <div class="esfera"> <!-- Representa la cara o esfera del reloj -->
+        <div class="marca centro"></div> <!-- Un pequeño punto en el centro del reloj -->
+    
+        <!-- Divs para mostrar los números en la esfera del reloj -->
+        <div class="numero n1">1</div>
+        <div class="numero n2">2</div>
+        <div class="numero n3">3</div>
+        <div class="numero n4">4</div>
+        <div class="numero n5">5</div>
+        <div class="numero n6">6</div>
+        <div class="numero n7">7</div>
+        <div class="numero n8">8</div>
+        <div class="numero n9">9</div>
+        <div class="numero n10">10</div>
+        <div class="numero n11">11</div>
+        <div class="numero n12">12</div>
+        <!-- Este div se usará para mostrar la hora en formato digital dentro del reloj analógico -->
+        <div id="Digital" class="numero nTotal">a</div>
+
+        <!-- Divs que representan las agujas del reloj -->
+        <div id="hora" class="aguja hora"></div> <!-- Aguja de las horas -->
+        <div id="minuto" class="aguja minuto"></div> <!-- Aguja de los minutos -->
+        <div id="segundo" class="aguja segundo"></div> <!-- Aguja de los segundos -->
+      </div>
+    </div>
+
+<form>
+  <h1>Alarmas del Reloj:</h1>
+  <input id="Nombre" type="time" placeholder="Nueva alarma:" name="tarea" />
+  <button id="Añadir" type="submit" class="add-btn" title="Añadir tarea">+</button>
+</form>
+
+<ul id="Tabla" class="task-list">
+</ul>
+
+<div id="Aviso">
+</div>
+
+
+<script>
+    const BotonAñadir = document.getElementById("Añadir");
+    const Titulo = document.getElementById("Nombre");
+    const Tabla = document.getElementById("Tabla");
+    const Aviso = document.getElementById("Aviso");
+    const Alarma = new Audio("./ASSETS/alarma.mp3");
+    let desplegar=false;
+
+    function cargarLista() {
+        const elementosLista = JSON.parse(localStorage.getItem("hora")) || [];
+        Tabla.innerHTML = ""; // Limpiar lista antes de renderizar
+
+        elementosLista.forEach((elemento, index) => {
+            const li = document.createElement("li");
+
+            li.innerHTML = `
+                <label id="completado-${index}"> Alarma a las: ${elemento.nombre}  </label>
+                <button class="delete-btn" onclick="eliminarElemento(${index})" data-index="${index}" aria-label="Eliminar tarea">&#128465;</button>
+            `;
+
+            Tabla.appendChild(li);
+        });
+    }
+
+    function añadirElemento() {
+        const texto = Titulo.value.trim();
+        if (texto === "") return;
+
+        const elementosLista = JSON.parse(localStorage.getItem("hora")) || [];
+        const nuevaHora = {
+            nombre: texto,
+        };
+
+        elementosLista.push(nuevaHora);
+        localStorage.setItem("hora", JSON.stringify(elementosLista));
+        Titulo.value = "";
+        cargarLista();
+    }
+
+    function eliminarElemento(indice){
+      let horas = JSON.parse(localStorage.getItem("hora")) || [];
+      horas.splice(indice, 1); // elimina una tarea en ese índice
+      localStorage.setItem("hora", JSON.stringify(horas));
+      cargarLista();    
+      
+    }
+
+
+    BotonAñadir.addEventListener("click", function(e){
+      e.preventDefault();
+      añadirElemento();
+    });
+function cargarAlarma() {
+    if (desplegar) return;
+
+    const ahora = new Date();
+    const HoraArray = [
+        String(ahora.getHours()).padStart(2, '0'),
+        String(ahora.getMinutes()).padStart(2, '0')
+    ];
+
+    let elementosLista = JSON.parse(localStorage.getItem("hora")) || [];
+
+    for (let i = 0; i < elementosLista.length; i++) {
+        const alarma = elementosLista[i].nombre.split(":");
+
+        if (HoraArray.every((valor, indice) => valor === alarma[indice])) {
+            desplegar = true;
+            Aviso.className="Aviso";
+            Aviso.innerHTML = `
+                <p class="AvisoP">¡¡¡ Alarma Activa !!!</p>
+                <p class="AvisoH">${elementosLista[i].nombre}</p>
+                <button onclick="Desactivar()">Desactivar</button>
+            `;
+            Alarma.play();
+
+            // Eliminar alarma activada
+            elementosLista.splice(i, 1);
+            localStorage.setItem("hora", JSON.stringify(elementosLista));
+            cargarLista(); // actualiza la lista visual
+
+            break; // salimos del bucle, ya que sólo puede haber una alarma a la vez
+        }
+    }
+}
+
+   function Desactivar(){
+    Alarma.pause();
+    Alarma.currentTime = 0;
+    Aviso.innerHTML="";
+    Aviso.className="";
+    desplegar= false;
+   }
+
+    // Al cargar la página:
+    cargarLista();
+    cargarAlarma();
+    // Cada segundo se comprueba la alarma:
+    setInterval(cargarAlarma,1000);
+</script>
+<script>
+// --- LÓGICA DEL RELOJ ANALÓGICO (Posición inicial y animación) ---
+const tiempo = new Date(); // Obtiene la hora actual una vez, al cargar la página.
+const RelojDigital =document.getElementById("Digital"); // Referencia al elemento del reloj digital.
+
+// --- Cálculo del ángulo inicial para la aguja de la HORA ---
+let hora = tiempo.getHours();
+if (hora >= 12) hora -= 12; // Convierte el formato de 24h a 12h.
+let anguloHora = (hora * 30) - 90; // Cada hora son 30° (360/12). Se restan 90° porque 0° en CSS apunta a la derecha, no hacia arriba.
+
+// --- Cálculo del ángulo inicial para la aguja del MINUTO ---
+let minuto = tiempo.getMinutes();
+let anguloMinuto = (minuto * 6) - 90; // Cada minuto son 6° (360/60). Se aplica el mismo ajuste de -90°.
+
+// --- Cálculo del ángulo inicial para la aguja del SEGUNDO ---
+let segundo = tiempo.getSeconds();
+let anguloSegundo = (segundo * 6) - 90; // Cada segundo son 6° (360/60). Se aplica el mismo ajuste de -90°.
+
+// --- Creación dinámica de las animaciones CSS ---
+// Se crea una etiqueta <style> mediante JavaScript.
+const style = document.createElement("style");
+// Se define el contenido de la etiqueta <style> con las animaciones @keyframes.
+style.innerHTML = `
+  /* Animación para la aguja de la hora: una vuelta completa (360°) en 12 horas (43200s) */
+  @keyframes girarHora {
+    from { transform: rotate(${anguloHora}deg); }
+    to { transform: rotate(${360 + anguloHora}deg); }
+  }
+  /* Animación para la aguja de los minutos: una vuelta completa en 1 hora (3600s) */
+  @keyframes girarMinutos {
+    from { transform: rotate(${anguloMinuto}deg); }
+    to { transform: rotate(${360 + anguloMinuto}deg); }
+  }
+  /* Animación para la aguja de los segundos: una vuelta completa en 1 minuto (60s) */
+  @keyframes girarSegundos {
+    from { transform: rotate(${anguloSegundo}deg); }
+    to { transform: rotate(${360 + anguloSegundo}deg); }
+  }
+  /* Clases que aplican las animaciones */
+  .animar_1 {
+    animation: girarHora 43200s linear infinite;
+  }
+  .animar_2 {
+    animation: girarMinutos 3600s linear infinite;
+  }
+  .animar_3 {
+    animation: girarSegundos 60s linear infinite;
+  }
+`;
+// Se añade la etiqueta <style> al <head> del documento, activando las animaciones.
+document.head.appendChild(style);
+
+// --- Aplicar las clases de animación a las agujas del reloj ---
+document.getElementById("hora").classList.add("animar_1");
+document.getElementById("minuto").classList.add("animar_2");
+document.getElementById("segundo").classList.add("animar_3");
+
+// --- LÓGICA DEL RELOJ DIGITAL (Actualización continua) ---
+/**
+ * Actualiza el reloj digital que se muestra en la esfera.
+ */
+function Digital(){
+    const tiempo_1= new Date(); // Obtiene la hora actual en cada llamada.
+    let hora_1= tiempo_1.getHours();
+    let minuto_1=tiempo_1.getMinutes();
+
+    // Formatea la hora y los minutos para que siempre tengan dos dígitos.
+    if (hora_1<10){
+        hora_1="0" + hora_1;
+    }
+    if (minuto_1 < 10){
+        minuto_1="0" + minuto_1;
+    }
+    // Muestra la hora formateada en el elemento del reloj digital.
+    RelojDigital.textContent=`${hora_1}:${minuto_1}`;
+}
+
+Digital(); // Llama a la función una vez al inicio para que no haya un segundo de retraso.
+setInterval(Digital,1000); // Configura la función Digital() para que se ejecute cada 1000 milisegundos (cada segundo).
+</script>
+</body>
+</html>
