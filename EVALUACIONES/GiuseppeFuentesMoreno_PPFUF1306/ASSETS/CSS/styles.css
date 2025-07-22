@@ -1,0 +1,64 @@
+ body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 100;
+    }
+
+    /* Sección con efecto parallax */
+    .parallax {
+      background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0');
+      height:100vh;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 35px;
+      color: white;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    }
+
+    .contenedor {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 40px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .texto {
+      flex: 1;
+      padding-right: 20px;
+    }
+
+    .texto p{
+        font-weight: 600;
+        font-size: 14px;
+    }
+
+    .texto h2{
+        font-weight: bold;
+    }
+    .imagen {
+      width: 500px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    @media screen and (max-width: 768px) {
+      .contenedor {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .texto {
+        padding-right: 0;
+        margin-bottom: 20px;
+      }
+    }
