@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contra el Hambre - ONG Solidaria</title>
+
+  <!-- Google Fonts: Poppins y Open Sans para textos -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Poppins:wght@600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./ASSETS/CSS/styles.css">
+</head>
+<body>
+  <header class="container">
+    <h1>Contra el Hambre</h1>
+    <button id="mode-toggle" aria-label="Cambiar modo claro/oscuro" title="Cambiar modo claro/oscuro">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 3a9 9 0 1 0 9 9 9.01 9.01 0 0 0-9-9z"/>
+      </svg>
+      Modo Oscuro
+    </button>
+  </header>
+
+  <main class="container" role="main">
+    <section aria-labelledby="intro-title">
+      <h2 id="intro-title">Nuestra Misión</h2>
+      <p>
+        Somos una organización sin ánimo de lucro dedicada a luchar contra el hambre en todo el mundo. 
+        Trabajamos con comunidades vulnerables para garantizar el acceso a alimentos nutritivos y promover la sostenibilidad alimentaria.
+      </p>
+      <p>
+        A través de proyectos de educación, distribución de alimentos y apoyo a la agricultura local, buscamos construir un futuro donde nadie pase hambre.
+      </p>
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1080&q=80" alt="Manos sosteniendo alimentos frescos" class="hero-image" />
+    </section>
+
+    <section aria-labelledby="projects-title">
+      <h2 id="projects-title">Proyectos Destacados</h2>
+      <div class="projects-grid">
+        <article class="project-card" aria-label="Proyecto de distribución de alimentos">
+          <h3>Distribución de Alimentos</h3>
+          <p>
+            Entregamos alimentos básicos y nutritivos a familias en situación de pobreza en diversas regiones.
+            Nuestro equipo trabaja en coordinación con voluntarios y asociaciones locales.
+          </p>
+        </article>
+        <article class="project-card" aria-label="Proyecto de educación nutricional">
+          <h3>Educación Nutricional</h3>
+          <p>
+            Organizamos talleres y campañas para enseñar hábitos alimenticios saludables y sostenibles.
+            Empoderamos a las comunidades para que cuiden de su salud a largo plazo.
+          </p>
+        </article>
+        <article class="project-card" aria-label="Proyecto de agricultura sostenible">
+          <h3>Agricultura Sostenible</h3>
+          <p>
+            Apoyamos a pequeños agricultores mediante formación y recursos para que puedan producir alimentos de manera eficiente y respetuosa con el medio ambiente.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="call-to-action-title" style="text-align:center; margin-top:3rem;">
+      <h2 id="call-to-action-title">¿Quieres Ayudar?</h2>
+      <p>Únete a nuestra causa para acabar con el hambre. Tu colaboración es vital.</p>
+      <a href="#" class="btn-primary" role="button">Haz tu Donación</a>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Contra el Hambre. Todos los derechos reservados.
+  </footer>
+
+  <script src="./ASSETS/JS/script.js"></script>
+</body>
+</html>
